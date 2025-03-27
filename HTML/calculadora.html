@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huella de Carbono</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Agregar Chart.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
 
@@ -44,112 +45,35 @@
     <!-- apartado del cuestionario -->
     <div class="container2 mt-5">
         <h1 class="text-center" style="color: black">Calculadora de Huella de Carbono</h1>
-        <form id="carbon-form" class="mt-4" style="color:black;">
-            <fieldset>
-                <legend>1. Consumo de energía y electrodomésticos</legend>
-                <p>¿Qué electrodomésticos usas?</p>
-                <input type="checkbox" name="electrodomesticos" value="televisor"> Televisor<br>
-                <input type="checkbox" name="electrodomesticos" value="computadora"> Computadora<br>
-                <input type="checkbox" name="electrodomesticos" value="laptop"> Laptop<br>
-                <input type="checkbox" name="electrodomesticos" value="consola"> Consola de videojuegos<br>
-                <input type="checkbox" name="electrodomesticos" value="refrigerador"> Refrigerador<br>
-                <input type="checkbox" name="electrodomesticos" value="lavadora"> Lavadora<br>
-                <input type="checkbox" name="electrodomesticos" value="secadora"> Secadora<br>
-                <input type="checkbox" name="electrodomesticos" value="microondas"> Horno microondas<br>
-                <input type="checkbox" name="electrodomesticos" value="otros"> Otros (especificar)<br>
-                <input type="text" name="otros_electrodomesticos"><br>
+        <form>
+            <label for="electricidad">Electricidad (kWh):</label>
+            <input id="electricidad" type="number" placeholder="Electricidad" required><br><br>
 
-                <p>En mi domicilio utilizo:</p>
-                <input type="checkbox" name="energia" value="electricidad"> Energía eléctrica<br>
-                <input type="checkbox" name="energia" value="gas"> Gas natural<br>
-                <input type="checkbox" name="energia" value="solar"> Energía solar<br>
-                <input type="checkbox" name="energia" value="otro"> Otro (especificar)<br>
-                <input type="text" name="otro_energia"><br>
+            <label for="transporte">Transporte (km):</label>
+            <input id="transporte" type="number" placeholder="Transporte" required><br><br>
 
-                <p>¿Cuál es tu fuente principal de calefacción?</p>
-                <select name="calefaccion">
-                    <option value="gas">Gas natural</option>
-                    <option value="electricidad">Electricidad</option>
-                    <option value="madera">Madera</option>
-                    <option value="biomasa">Biomasa</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </fieldset>
+            <label for="gas">Gas (m³):</label>
+            <input id="gas" type="number" placeholder="Gas" required><br><br>
 
-            <fieldset>
-                <legend>2. Transporte y movilidad</legend>
-                <p>¿Cómo te transportas para ir al trabajo o a la escuela?</p>
-                <select name="transporte">
-                    <option value="auto">Automóvil privado</option>
-                    <option value="moto">Motocicleta</option>
-                    <option value="transporte_publico">Transporte público</option>
-                    <option value="bicicleta">Bicicleta</option>
-                    <option value="pie">A pie</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </fieldset>
+            <label for="flights">Vuelos Anuales:</label>
+            <input id="flights" type="number" placeholder="Vuelos" required><br><br>
 
-            <fieldset>
-                <legend>3. Consumo de alimentos</legend>
-                <p>¿Con qué frecuencia consumes carne?</p>
-                <label><input type="checkbox" name="carne" value="pescado"> Pescado</label>
-                <label><input type="checkbox" name="carne" value="pollo"> Pollo</label>
-                <label><input type="checkbox" name="carne" value="res"> Res</label>
-                <label><input type="checkbox" name="carne" value="cerdo"> Cerdo</label>
-            </fieldset>
+            <label for="transportation">Transporte Público:</label>
+            <input id="transportation" type="number" placeholder="Transporte Público" required><br><br>
 
-            <fieldset>
-                <legend>4. Hábitos de consumo y desperdicio</legend>
-                <p>¿Cómo desechas tus residuos?</p>
-                <select name="residuos">
-                    <option value="basura">Basura general</option>
-                    <option value="reciclaje">Reciclaje</option>
-                    <option value="composta">Composta</option>
-                    <option value="incineracion">Incineración</option>
-                </select>
-            </fieldset>
+            <label for="plasticUse">Uso de Plásticos:</label>
+            <input id="plasticUse" type="number" placeholder="Uso de Plásticos" required><br><br>
 
-            <fieldset>
-                <legend>5. Uso de agua y recursos en el hogar</legend>
-                <p>¿Tienes algún sistema de recolección de agua de lluvia?</p>
-                <input type="radio" name="agua_lluvia" value="si"> Sí
-                <input type="radio" name="agua_lluvia" value="no"> No
-            </fieldset>
+            <label for="clothes">Compras de Ropa:</label>
+            <input id="clothes" type="number" placeholder="Compras de Ropa" required><br><br>
 
-            <fieldset>
-                <legend>6. Consumo de ropa y dispositivos electrónicos</legend>
-                <p>¿Cada cuánto cambias tus dispositivos electrónicos?</p>
-                <select name="dispositivos">
-                    <option value="menos_1">Menos de 1 año</option>
-                    <option value="1_2">1-2 años</option>
-                    <option value="3_4">3-4 años</option>
-                    <option value="mas_4">Más de 4 años</option>
-                </select>
-            </fieldset>
+            <label for="foodPurchases">Compras de Alimentos:</label>
+            <input id="foodPurchases" type="number" placeholder="Compras de Alimentos" required><br><br>
 
-            <fieldset>
-                <legend>7. Actividades diarias y estilo de vida</legend>
-                <p>¿Con qué frecuencia realizas actividades al aire libre?</p>
-                <select name="actividades">
-                    <option value="nunca">Nunca</option>
-                    <option value="1_2">1-2 veces al mes</option>
-                    <option value="semanal">Semanalmente</option>
-                    <option value="varias">Varias veces a la semana</option>
-                </select>
-            </fieldset>
+            <label for="productType">Tipo de Producto:</label>
+            <input id="productType" type="number" placeholder="Tipo de Producto" required><br><br>
 
-            <fieldset>
-                <legend>8. Uso de electrodomésticos y climatización</legend>
-                <p>¿Cuántas horas al día usas el aire acondicionado o la calefacción?</p>
-                <select name="climatizacion">
-                    <option value="menos_2">Menos de 2 horas</option>
-                    <option value="2_4">2-4 horas</option>
-                    <option value="mas_4">Más de 4 horas</option>
-                </select>
-            </fieldset>
-
-            <button type="submit" class="btn btn-primary w-100">Calcular</button>
-
+            <button type="submit">Calcular</button>
         </form>
 
         <div class="mt-4">
@@ -301,7 +225,6 @@
 
 <!-- Script de partículas -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../JS/particulas.js"></script>
 <script src="../JS/formulario.js"></script>
 </body>
