@@ -45,101 +45,79 @@
     <!-- apartado del cuestionario -->
     <div class="container2 mt-5">
         <h1 class="text-center" style="color: black">Calculadora de Huella de Carbono</h1>
-        <form style="color: black;">
-            <h3>1. Consumo de energía y electrodomésticos</h3>
-            <label for="electricidad">Consumo de electricidad (kWh):</label>
-            <input id="electricidad" type="number" placeholder="kWh" required><br><br>
+        <form action="" method="post">
 
-            <label>Televisor:</label><input type="checkbox" name="electrodomesticos" value="Televisor"><br>
-            <label>Computadora:</label><input type="checkbox" name="electrodomesticos" value="Computadora"><br>
-            <label>Laptop:</label><input type="checkbox" name="electrodomesticos" value="Laptop"><br>
-            <label>Consola de videojuegos:</label><input type="checkbox" name="electrodomesticos" value="Consola de videojuegos"><br>
-            <label>Refrigerador:</label><input type="checkbox" name="electrodomesticos" value="Refrigerador"><br>
-            <label>Lavadora:</label><input type="checkbox" name="electrodomesticos" value="Lavadora"><br>
-            <label>Secadora:</label><input type="checkbox" name="electrodomesticos" value="Secadora"><br>
-            <label>Horno microondas:</label><input type="checkbox" name="electrodomesticos" value="Horno microondas"><br>
-            <label>Otros (especificar):</label><input type="text" name="otrosElectrodomesticos"><br><br>
+            <h3>Electrodomésticos en el hogar</h3>
+            <label><input type="checkbox" name="electrodomesticos" value="televisor"> Televisor</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="computadora"> Computadora</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="laptop"> Laptop</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="consola"> Consola de videojuegos</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="refrigerador"> Refrigerador</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="lavadora"> Lavadora</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="secadora"> Secadora</label><br>
+            <label><input type="checkbox" name="electrodomesticos" value="microondas"> Horno microondas</label><br>
 
-            <h3>2. Transporte y movilidad</h3>
-            <label for="transporte">¿Cómo te transportas para ir al trabajo o a la escuela?</label><br>
-            <select id="transporte" required>
-                <option value="Automóvil privado">Automóvil privado</option>
-                <option value="Motocicleta">Motocicleta</option>
-                <option value="Transporte público">Transporte público</option>
-                <option value="Bicicleta">Bicicleta</option>
-                <option value="A pie">A pie</option>
-                <option value="Otro">Otro (especificar)</option>
-            </select><br><br>
+            <h3>Energía utilizada en el hogar</h3>
+            <label><input type="checkbox" name="energia" value="electrica"> Energía eléctrica</label><br>
+            <label><input type="checkbox" name="energia" value="gas"> Gas natural</label><br>
+            <label><input type="checkbox" name="energia" value="solar"> Energía solar</label><br>
 
-            <label for="tiempo">¿En cuánto tiempo haces ese recorrido?</label><br>
-            <select id="tiempo" required>
-                <option value="Menos de 15 minutos">Menos de 15 minutos</option>
-                <option value="15-30 minutos">15-30 minutos</option>
-                <option value="30-60 minutos">30-60 minutos</option>
-                <option value="Más de 60 minutos">Más de 60 minutos</option>
-            </select><br><br>
+            <h3>Tipo de iluminación</h3>
+            <label><input type="radio" name="focos" value="incandescentes"> Incandescentes</label><br>
+            <label><input type="radio" name="focos" value="fluorescentes"> Fluorescentes</label><br>
+            <label><input type="radio" name="focos" value="led"> LED</label><br>
 
-            <h3>3. Consumo de alimentos</h3>
-            <label for="carne">¿Con qué frecuencia comes carne de?</label><br>
-            <select id="carne" required>
-                <option value="Nunca">Nunca</option>
-                <option value="Pescado">Pescado</option>
-                <option value="Pollo">Pollo</option>
-                <option value="Res">Res</option>
-                <option value="Cerdo">Cerdo</option>
-                <option value="Otras carnes">Otras carnes</option>
-            </select><br><br>
+            <h3>Medio de transporte principal</h3>
+            <label><input type="radio" name="transporte" value="auto"> Automóvil privado</label><br>
+            <label><input type="radio" name="transporte" value="moto"> Motocicleta</label><br>
+            <label><input type="radio" name="transporte" value="transporte_publico"> Transporte público</label><br>
+            <label><input type="radio" name="transporte" value="bicicleta"> Bicicleta</label><br>
+            <label><input type="radio" name="transporte" value="pie"> A pie</label><br>
 
-            <h3>4. Hábitos de consumo y desperdicio</h3>
-            <label for="residuos">¿Cómo desechas tus residuos?</label><br>
-            <select id="residuos" required>
-                <option value="Basura general">Basura general</option>
-                <option value="Reciclaje">Reciclaje</option>
-                <option value="Composta">Composta</option>
-                <option value="Incineración">Incineración</option>
-            </select><br><br>
+            <h3>Tiempo de traslado diario</h3>
+            <label><input type="radio" name="tiempo_traslado" value="menos_15"> Menos de 15 minutos</label><br>
+            <label><input type="radio" name="tiempo_traslado" value="15_30"> 15-30 minutos</label><br>
+            <label><input type="radio" name="tiempo_traslado" value="30_60"> 30-60 minutos</label><br>
+            <label><input type="radio" name="tiempo_traslado" value="mas_60"> Más de 60 minutos</label><br>
 
-            <h3>5. Uso de agua y recursos en el hogar</h3>
-            <label for="agua">¿Tienes algún sistema de recolección de agua de lluvia?</label><br>
-            <select id="agua" required>
-                <option value="Sí">Sí</option>
-                <option value="No">No</option>
-            </select><br><br>
+            <h3>Frecuencia de uso de plásticos de un solo uso</h3>
+            <label><input type="radio" name="plasticos" value="nunca"> Nunca</label><br>
+            <label><input type="radio" name="plasticos" value="ocasionalmente"> Ocasionalmente</label><br>
+            <label><input type="radio" name="plasticos" value="frecuentemente"> Frecuentemente</label><br>
+            <label><input type="radio" name="plasticos" value="siempre"> Siempre</label><br>
 
-            <h3>6. Consumo de ropa y dispositivos electrónicos</h3>
-            <label for="ropa">La ropa que utilizo:</label><br>
-            <select id="ropa" required>
-                <option value="Compro nueva">Compro nueva</option>
-                <option value="Uso de segunda mano">Uso de segunda mano</option>
-                <option value="Reciclo o dono">Reciclo o dono</option>
-                <option value="Uso la misma por mucho tiempo">Uso la misma por mucho tiempo</option>
-            </select><br><br>
+            <h3>Consumo de carne</h3>
+            <label><input type="checkbox" name="carne" value="pescado"> Pescado</label><br>
+            <label><input type="checkbox" name="carne" value="pollo"> Pollo</label><br>
+            <label><input type="checkbox" name="carne" value="res"> Res</label><br>
+            <label><input type="checkbox" name="carne" value="cerdo"> Cerdo</label><br>
+            <label><input type="checkbox" name="carne" value="ninguna"> No consumo carne</label><br>
 
-            <h3>7. Actividades diarias y estilo de vida</h3>
-            <label for="aireLibre">¿Con qué frecuencia realizas actividades al aire libre?</label><br>
-            <select id="aireLibre" required>
-                <option value="Nunca">Nunca</option>
-                <option value="1-2 veces al mes">1-2 veces al mes</option>
-                <option value="Semanalmente">Semanalmente</option>
-                <option value="Varias veces a la semana">Varias veces a la semana</option>
-            </select><br><br>
+            <h3>Frecuencia de compra de ropa nueva</h3>
+            <label><input type="radio" name="ropa" value="menos_mes"> Menos de una vez al mes</label><br>
+            <label><input type="radio" name="ropa" value="una_mes"> Una vez al mes</label><br>
+            <label><input type="radio" name="ropa" value="varias_mes"> Varias veces al mes</label><br>
 
-            <h3>8. Uso de electrodomésticos y climatización</h3>
-            <label for="lavadoRopa">¿Con qué frecuencia lavas la ropa?</label><br>
-            <select id="lavadoRopa" required>
-                <option value="Una vez a la semana">Una vez a la semana</option>
-                <option value="Cada dos semanas">Cada dos semanas</option>
-                <option value="Menos de una vez al mes">Menos de una vez al mes</option>
-            </select><br><br>
+            <h3>Frecuencia de uso de aire acondicionado o calefacción</h3>
+            <label><input type="radio" name="clima" value="menos_2"> Menos de 2 horas</label><br>
+            <label><input type="radio" name="clima" value="2_4"> 2-4 horas</label><br>
+            <label><input type="radio" name="clima" value="mas_4"> Más de 4 horas</label><br>
 
-            <label for="aireAcondicionado">¿Cuántas horas al día usas el aire acondicionado o la calefacción?</label><br>
-            <select id="aireAcondicionado" required>
-                <option value="Menos de 2 horas">Menos de 2 horas</option>
-                <option value="2-4 horas">2-4 horas</option>
-                <option value="Más de 4 horas">Más de 4 horas</option>
-            </select><br><br>
+            <h3>Gestión de residuos</h3>
+            <label><input type="radio" name="residuos" value="basura"> Basura general</label><br>
+            <label><input type="radio" name="residuos" value="reciclaje"> Reciclaje</label><br>
+            <label><input type="radio" name="residuos" value="composta"> Composta</label><br>
 
-            <button type="submit">Calcular</button>
+            <h3>¿Participas en programas de reciclaje?</h3>
+            <label><input type="radio" name="reciclaje" value="si"> Sí</label><br>
+            <label><input type="radio" name="reciclaje" value="no"> No</label><br>
+
+            <h3>¿Tienes algún sistema de recolección de agua de lluvia?</h3>
+            <label><input type="radio" name="agua_lluvia" value="si"> Sí</label><br>
+            <label><input type="radio" name="agua_lluvia" value="no"> No</label><br>
+
+            <br>
+            <input type="submit" value="Enviar">
         </form>
 
         <div class="mt-4">
