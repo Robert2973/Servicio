@@ -45,101 +45,108 @@
     <div class="container2 mt-5">
         <h1 class="text-center" style="color: black">Calculadora de Huella de Carbono</h1>
         <form id="carbon-form" class="mt-4">
+            <fieldset>
+                <legend>1. Consumo de energía y electrodomésticos</legend>
+                <p>¿Qué electrodomésticos usas?</p>
+                <input type="checkbox" name="electrodomesticos" value="televisor"> Televisor<br>
+                <input type="checkbox" name="electrodomesticos" value="computadora"> Computadora<br>
+                <input type="checkbox" name="electrodomesticos" value="laptop"> Laptop<br>
+                <input type="checkbox" name="electrodomesticos" value="consola"> Consola de videojuegos<br>
+                <input type="checkbox" name="electrodomesticos" value="refrigerador"> Refrigerador<br>
+                <input type="checkbox" name="electrodomesticos" value="lavadora"> Lavadora<br>
+                <input type="checkbox" name="electrodomesticos" value="secadora"> Secadora<br>
+                <input type="checkbox" name="electrodomesticos" value="microondas"> Horno microondas<br>
+                <input type="checkbox" name="electrodomesticos" value="otros"> Otros (especificar)<br>
+                <input type="text" name="otros_electrodomesticos"><br>
 
-            <!-- Pregunta 1 -->
-            <div class="mb-3">
-                <label for="electricidad" class="form-label">Consumo mensual de electricidad (kWh):</label>
-                <input type="number" id="electricidad" class="form-control" required>
-            </div>
+                <p>En mi domicilio utilizo:</p>
+                <input type="checkbox" name="energia" value="electricidad"> Energía eléctrica<br>
+                <input type="checkbox" name="energia" value="gas"> Gas natural<br>
+                <input type="checkbox" name="energia" value="solar"> Energía solar<br>
+                <input type="checkbox" name="energia" value="otro"> Otro (especificar)<br>
+                <input type="text" name="otro_energia"><br>
 
-            <!-- Pregunta 2 -->
-            <div class="mb-3">
-                <label for="transporte" class="form-label">Kilómetros recorridos en automóvil por mes:</label>
-                <input type="number" id="transporte" class="form-control" required>
-            </div>
-
-            <!-- Pregunta 3 -->
-            <div class="mb-3">
-                <label for="gas" class="form-label">Consumo de gas natural (m³):</label>
-                <input type="number" id="gas" class="form-control" required>
-            </div>
-
-            <!-- Pregunta 4 -->
-            <div class="mb-3">
-                <label for="energyType" class="form-label">En mi domicilio utilizo:</label>
-                <select id="energyType" class="form-select" required>
-                    <option value="1">Energía eléctrica</option>
-                    <option value="2">Gas natural</option>
-                    <option value="3">Energía solar</option>
-                    <option value="4">Otro (especificar)</option>
+                <p>¿Cuál es tu fuente principal de calefacción?</p>
+                <select name="calefaccion">
+                    <option value="gas">Gas natural</option>
+                    <option value="electricidad">Electricidad</option>
+                    <option value="madera">Madera</option>
+                    <option value="biomasa">Biomasa</option>
+                    <option value="otro">Otro</option>
                 </select>
-            </div>
+            </fieldset>
 
-            <!-- Pregunta 5 -->
-            <div class="mb-3">
-                <label for="flights" class="form-label">¿Con qué frecuencia vuelas en avión?</label>
-                <select id="flights" class="form-select" required>
-                    <option value="1">Nunca</option>
-                    <option value="2">1 vez al año</option>
-                    <option value="3">2-3 veces al año</option>
-                    <option value="4">Más de 3 veces al año</option>
+            <fieldset>
+                <legend>2. Transporte y movilidad</legend>
+                <p>¿Cómo te transportas para ir al trabajo o a la escuela?</p>
+                <select name="transporte">
+                    <option value="auto">Automóvil privado</option>
+                    <option value="moto">Motocicleta</option>
+                    <option value="transporte_publico">Transporte público</option>
+                    <option value="bicicleta">Bicicleta</option>
+                    <option value="pie">A pie</option>
+                    <option value="otro">Otro</option>
                 </select>
-            </div>
+            </fieldset>
 
-            <!-- Pregunta 6 -->
-            <div class="mb-3">
-                <label for="transportation" class="form-label">¿Cómo te transportas para ir al trabajo o a la escuela?</label>
-                <select id="transportation" class="form-select" required>
-                    <option value="1">Automóvil privado</option>
-                    <option value="2">Motocicleta</option>
-                    <option value="3">Transporte público</option>
-                    <option value="4">Bicicleta</option>
-                    <option value="5">A pie</option>
-                    <option value="6">Otro (especificar)</option>
-                </select>
-            </div>
+            <fieldset>
+                <legend>3. Consumo de alimentos</legend>
+                <p>¿Con qué frecuencia consumes carne?</p>
+                <label><input type="checkbox" name="carne" value="pescado"> Pescado</label>
+                <label><input type="checkbox" name="carne" value="pollo"> Pollo</label>
+                <label><input type="checkbox" name="carne" value="res"> Res</label>
+                <label><input type="checkbox" name="carne" value="cerdo"> Cerdo</label>
+            </fieldset>
 
-            <!-- Pregunta 7-->
-            <div class="mb-3">
-                <label for="plasticUse" class="form-label">¿Con qué regularidad utilizas plásticos de un solo uso?</label>
-                <select id="plasticUse" class="form-select" required>
-                    <option value="1">Nunca</option>
-                    <option value="2">Ocasionalmente</option>
-                    <option value="3">Frecuentemente</option>
-                    <option value="4">Siempre</option>
+            <fieldset>
+                <legend>4. Hábitos de consumo y desperdicio</legend>
+                <p>¿Cómo desechas tus residuos?</p>
+                <select name="residuos">
+                    <option value="basura">Basura general</option>
+                    <option value="reciclaje">Reciclaje</option>
+                    <option value="composta">Composta</option>
+                    <option value="incineracion">Incineración</option>
                 </select>
-            </div>
+            </fieldset>
 
-            <!-- Pregunta 8 -->
-            <div class="mb-3">
-                <label for="clothes" class="form-label">¿Con qué frecuencia compras ropa nueva?</label>
-                <select id="clothes" class="form-select" required>
-                    <option value="1">Menos de una vez al mes</option>
-                    <option value="2">Una vez al mes</option>
-                    <option value="3">Varias veces al mes</option>
-                </select>
-            </div>
+            <fieldset>
+                <legend>5. Uso de agua y recursos en el hogar</legend>
+                <p>¿Tienes algún sistema de recolección de agua de lluvia?</p>
+                <input type="radio" name="agua_lluvia" value="si"> Sí
+                <input type="radio" name="agua_lluvia" value="no"> No
+            </fieldset>
 
-            <!-- Pregunta 9 -->
-            <div class="mb-3">
-                <label for="foodPurchases" class="form-label">¿Cuántas veces a la semana compras alimentos?</label>
-                <select id="foodPurchases" class="form-select" required>
-                    <option value="1">1 vez</option>
-                    <option value="2">2-3 veces</option>
-                    <option value="3">Más de 3 veces</option>
+            <fieldset>
+                <legend>6. Consumo de ropa y dispositivos electrónicos</legend>
+                <p>¿Cada cuánto cambias tus dispositivos electrónicos?</p>
+                <select name="dispositivos">
+                    <option value="menos_1">Menos de 1 año</option>
+                    <option value="1_2">1-2 años</option>
+                    <option value="3_4">3-4 años</option>
+                    <option value="mas_4">Más de 4 años</option>
                 </select>
-            </div>
+            </fieldset>
 
-            <!-- Pregunta 10 -->
-            <div class="mb-3">
-                <label for="productType" class="form-label">¿Qué tipo de productos compras con mayor frecuencia?</label>
-                <select id="productType" class="form-select" required>
-                    <option value="1">Alimentos frescos</option>
-                    <option value="2">Comida procesada</option>
-                    <option value="3">Productos envasados</option>
-                    <option value="4">Productos orgánicos</option>
+            <fieldset>
+                <legend>7. Actividades diarias y estilo de vida</legend>
+                <p>¿Con qué frecuencia realizas actividades al aire libre?</p>
+                <select name="actividades">
+                    <option value="nunca">Nunca</option>
+                    <option value="1_2">1-2 veces al mes</option>
+                    <option value="semanal">Semanalmente</option>
+                    <option value="varias">Varias veces a la semana</option>
                 </select>
-            </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>8. Uso de electrodomésticos y climatización</legend>
+                <p>¿Cuántas horas al día usas el aire acondicionado o la calefacción?</p>
+                <select name="climatizacion">
+                    <option value="menos_2">Menos de 2 horas</option>
+                    <option value="2_4">2-4 horas</option>
+                    <option value="mas_4">Más de 4 horas</option>
+                </select>
+            </fieldset>
 
             <button type="submit" class="btn btn-primary w-100">Calcular</button>
 
