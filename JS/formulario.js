@@ -42,16 +42,16 @@ document.addEventListener("DOMContentLoaded", function() {
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevenir el envío del formulario
 
-    // Recoger valores y convertirlos en números válidos
+    // Recoger valores (se asegura de que no sean undefined o vacíos)
     let electricidad = parseFloat(document.getElementById("electricidad").value) || 0;
     let transporte = parseFloat(document.getElementById("transporte").value) || 0;
     let gas = parseFloat(document.getElementById("gas").value) || 0;
-    let flights = parseInt(document.getElementById("flights").value) || 1;
-    let transportation = parseInt(document.getElementById("transportation").value) || 1;
-    let plasticUse = parseInt(document.getElementById("plasticUse").value) || 1;
-    let clothes = parseInt(document.getElementById("clothes").value) || 1;
-    let foodPurchases = parseInt(document.getElementById("foodPurchases").value) || 1;
-    let productType = parseInt(document.getElementById("productType").value) || 1;
+    let flights = Math.max(1, parseInt(document.getElementById("flights").value) || 1);
+    let transportation = Math.max(1, parseInt(document.getElementById("transportation").value) || 1);
+    let plasticUse = Math.max(1, parseInt(document.getElementById("plasticUse").value) || 1);
+    let clothes = Math.max(1, parseInt(document.getElementById("clothes").value) || 1);
+    let foodPurchases = Math.max(1, parseInt(document.getElementById("foodPurchases").value) || 1);
+    let productType = Math.max(1, parseInt(document.getElementById("productType").value) || 1);
 
     // Factores de emisión (kgCO2 por unidad)
     const EMISSION_FACTORS = {
@@ -59,14 +59,14 @@ document.querySelector("form").addEventListener("submit", function(event) {
         transporte: 0.24, // kgCO2/km
         gas: 1.9, // kgCO2/m³
         vuelos: [0, 200, 500, 1200], // kgCO2 por vuelo anual
-        transportePublico: [400, 300, 100, 50, 0, 0], // kgCO2 por tipo de transporte
+        transportePublico: [400, 300, 100, 50, 0], // kgCO2 por tipo de transporte
         plastic: [0, 10, 50, 100], // kgCO2 anuales por plásticos
         ropa: [5, 10, 20], // kgCO2 anuales por compras de ropa
         alimentos: [50, 100, 150], // kgCO2 anuales por alimentos
         productos: [20, 50, 80, 30] // kgCO2 anuales por tipo de productos
     };
 
-    // Verificar índices válidos antes de acceder a los arreglos
+    // Asegurar índices válidos
     let emisiones = {
         electricidad: electricidad * EMISSION_FACTORS.electricidad,
         transporte: transporte * EMISSION_FACTORS.transporte,
@@ -83,7 +83,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     let totalEmissions = Object.values(emisiones).reduce((acc, val) => acc + val, 0);
 
     // Mostrar resultado
-    document.getElementById("resultado").textContent = `${totalEmissions.toFixed(2)} kg CO₂`;
+    document.getElementById("resultado").textContent = `Tu huella de carbono es: ${totalEmissions.toFixed(2)} kg CO₂`;
 
     // Actualizar gráfico con nuevos datos
     window.carbonChartInstance.data.datasets[0].data = Object.values(emisiones);
