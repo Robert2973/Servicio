@@ -46,32 +46,98 @@
     <div class="container2 mt-5">
         <h1 class="text-center" style="color: black">Calculadora de Huella de Carbono</h1>
         <form style="color: black;">
-            <label for="electricidad">Electricidad (kWh):</label>
-            <input id="electricidad" type="number" placeholder="Electricidad" required><br><br>
+            <h3>1. Consumo de energía y electrodomésticos</h3>
+            <label for="electricidad">Consumo de electricidad (kWh):</label>
+            <input id="electricidad" type="number" placeholder="kWh" required><br><br>
 
-            <label for="transporte">Transporte (km):</label>
-            <input id="transporte" type="number" placeholder="Transporte" required><br><br>
+            <label>Televisor:</label><input type="checkbox" name="electrodomesticos" value="Televisor"><br>
+            <label>Computadora:</label><input type="checkbox" name="electrodomesticos" value="Computadora"><br>
+            <label>Laptop:</label><input type="checkbox" name="electrodomesticos" value="Laptop"><br>
+            <label>Consola de videojuegos:</label><input type="checkbox" name="electrodomesticos" value="Consola de videojuegos"><br>
+            <label>Refrigerador:</label><input type="checkbox" name="electrodomesticos" value="Refrigerador"><br>
+            <label>Lavadora:</label><input type="checkbox" name="electrodomesticos" value="Lavadora"><br>
+            <label>Secadora:</label><input type="checkbox" name="electrodomesticos" value="Secadora"><br>
+            <label>Horno microondas:</label><input type="checkbox" name="electrodomesticos" value="Horno microondas"><br>
+            <label>Otros (especificar):</label><input type="text" name="otrosElectrodomesticos"><br><br>
 
-            <label for="gas">Gas (m³):</label>
-            <input id="gas" type="number" placeholder="Gas" required><br><br>
+            <h3>2. Transporte y movilidad</h3>
+            <label for="transporte">¿Cómo te transportas para ir al trabajo o a la escuela?</label><br>
+            <select id="transporte" required>
+                <option value="Automóvil privado">Automóvil privado</option>
+                <option value="Motocicleta">Motocicleta</option>
+                <option value="Transporte público">Transporte público</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="A pie">A pie</option>
+                <option value="Otro">Otro (especificar)</option>
+            </select><br><br>
 
-            <label for="flights">Vuelos Anuales:</label>
-            <input id="flights" type="number" placeholder="Vuelos" required><br><br>
+            <label for="tiempo">¿En cuánto tiempo haces ese recorrido?</label><br>
+            <select id="tiempo" required>
+                <option value="Menos de 15 minutos">Menos de 15 minutos</option>
+                <option value="15-30 minutos">15-30 minutos</option>
+                <option value="30-60 minutos">30-60 minutos</option>
+                <option value="Más de 60 minutos">Más de 60 minutos</option>
+            </select><br><br>
 
-            <label for="transportation">Transporte Público:</label>
-            <input id="transportation" type="number" placeholder="Transporte Público" required><br><br>
+            <h3>3. Consumo de alimentos</h3>
+            <label for="carne">¿Con qué frecuencia comes carne de?</label><br>
+            <select id="carne" required>
+                <option value="Nunca">Nunca</option>
+                <option value="Pescado">Pescado</option>
+                <option value="Pollo">Pollo</option>
+                <option value="Res">Res</option>
+                <option value="Cerdo">Cerdo</option>
+                <option value="Otras carnes">Otras carnes</option>
+            </select><br><br>
 
-            <label for="plasticUse">Uso de Plásticos:</label>
-            <input id="plasticUse" type="number" placeholder="Uso de Plásticos" required><br><br>
+            <h3>4. Hábitos de consumo y desperdicio</h3>
+            <label for="residuos">¿Cómo desechas tus residuos?</label><br>
+            <select id="residuos" required>
+                <option value="Basura general">Basura general</option>
+                <option value="Reciclaje">Reciclaje</option>
+                <option value="Composta">Composta</option>
+                <option value="Incineración">Incineración</option>
+            </select><br><br>
 
-            <label for="clothes">Compras de Ropa:</label>
-            <input id="clothes" type="number" placeholder="Compras de Ropa" required><br><br>
+            <h3>5. Uso de agua y recursos en el hogar</h3>
+            <label for="agua">¿Tienes algún sistema de recolección de agua de lluvia?</label><br>
+            <select id="agua" required>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select><br><br>
 
-            <label for="foodPurchases">Compras de Alimentos:</label>
-            <input id="foodPurchases" type="number" placeholder="Compras de Alimentos" required><br><br>
+            <h3>6. Consumo de ropa y dispositivos electrónicos</h3>
+            <label for="ropa">La ropa que utilizo:</label><br>
+            <select id="ropa" required>
+                <option value="Compro nueva">Compro nueva</option>
+                <option value="Uso de segunda mano">Uso de segunda mano</option>
+                <option value="Reciclo o dono">Reciclo o dono</option>
+                <option value="Uso la misma por mucho tiempo">Uso la misma por mucho tiempo</option>
+            </select><br><br>
 
-            <label for="productType">Tipo de Producto:</label>
-            <input id="productType" type="number" placeholder="Tipo de Producto" required><br><br>
+            <h3>7. Actividades diarias y estilo de vida</h3>
+            <label for="aireLibre">¿Con qué frecuencia realizas actividades al aire libre?</label><br>
+            <select id="aireLibre" required>
+                <option value="Nunca">Nunca</option>
+                <option value="1-2 veces al mes">1-2 veces al mes</option>
+                <option value="Semanalmente">Semanalmente</option>
+                <option value="Varias veces a la semana">Varias veces a la semana</option>
+            </select><br><br>
+
+            <h3>8. Uso de electrodomésticos y climatización</h3>
+            <label for="lavadoRopa">¿Con qué frecuencia lavas la ropa?</label><br>
+            <select id="lavadoRopa" required>
+                <option value="Una vez a la semana">Una vez a la semana</option>
+                <option value="Cada dos semanas">Cada dos semanas</option>
+                <option value="Menos de una vez al mes">Menos de una vez al mes</option>
+            </select><br><br>
+
+            <label for="aireAcondicionado">¿Cuántas horas al día usas el aire acondicionado o la calefacción?</label><br>
+            <select id="aireAcondicionado" required>
+                <option value="Menos de 2 horas">Menos de 2 horas</option>
+                <option value="2-4 horas">2-4 horas</option>
+                <option value="Más de 4 horas">Más de 4 horas</option>
+            </select><br><br>
 
             <button type="submit">Calcular</button>
         </form>
