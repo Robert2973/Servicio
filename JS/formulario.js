@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevenir el envío del formulario
 
-    // Recoger valores
+    // Recoger valores y convertirlos en números válidos
     let electricidad = parseFloat(document.getElementById("electricidad").value) || 0;
     let transporte = parseFloat(document.getElementById("transporte").value) || 0;
     let gas = parseFloat(document.getElementById("gas").value) || 0;
@@ -66,17 +66,17 @@ document.querySelector("form").addEventListener("submit", function(event) {
         productos: [20, 50, 80, 30] // kgCO2 anuales por tipo de productos
     };
 
-    // Cálculos de emisiones
+    // Verificar índices válidos antes de acceder a los arreglos
     let emisiones = {
         electricidad: electricidad * EMISSION_FACTORS.electricidad,
         transporte: transporte * EMISSION_FACTORS.transporte,
         gas: gas * EMISSION_FACTORS.gas,
-        vuelos: EMISSION_FACTORS.vuelos[flights - 1],
-        transportePublico: EMISSION_FACTORS.transportePublico[transportation - 1],
-        plastic: EMISSION_FACTORS.plastic[plasticUse - 1],
-        ropa: EMISSION_FACTORS.ropa[clothes - 1],
-        alimentos: EMISSION_FACTORS.alimentos[foodPurchases - 1],
-        productos: EMISSION_FACTORS.productos[productType - 1]
+        vuelos: EMISSION_FACTORS.vuelos[Math.min(flights - 1, EMISSION_FACTORS.vuelos.length - 1)],
+        transportePublico: EMISSION_FACTORS.transportePublico[Math.min(transportation - 1, EMISSION_FACTORS.transportePublico.length - 1)],
+        plastic: EMISSION_FACTORS.plastic[Math.min(plasticUse - 1, EMISSION_FACTORS.plastic.length - 1)],
+        ropa: EMISSION_FACTORS.ropa[Math.min(clothes - 1, EMISSION_FACTORS.ropa.length - 1)],
+        alimentos: EMISSION_FACTORS.alimentos[Math.min(foodPurchases - 1, EMISSION_FACTORS.alimentos.length - 1)],
+        productos: EMISSION_FACTORS.productos[Math.min(productType - 1, EMISSION_FACTORS.productos.length - 1)]
     };
 
     // Sumar total de emisiones
