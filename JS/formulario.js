@@ -40,17 +40,85 @@ document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevenir el envío del formulario
 
     // Recoger valores de todos los inputs
-    let electricidad = parseFloat(document.getElementById("electricidad").value) || 0;
-    let transporte = document.getElementById("transporte").value;
-    let carne = document.getElementById("carne").value;
-    let residuos = document.getElementById("residuos").value;
 
-    let consumo = electricidad * 0.5; // Ejemplo de cálculo para electricidad
+    // Consumo de electricidad
+    let electricidad = parseFloat(document.getElementById("electricidad").value) || 0;
+
+    // Electrodomésticos (tomamos como ejemplo un valor arbitrario de 1 kg de CO2 por dispositivo)
+    let electrodomesticos = document.querySelectorAll("input[name='electrodomesticos']:checked");
+    let electrodomesticosEmisiones = electrodomesticos.length * 0.5; // Asignamos 0.5 kg de CO2 por electrodoméstico usado
+
+    // Transporte (tomamos un valor estimado de emisiones por tipo de transporte)
+    let transporte = document.getElementById("transporte").value;
+    let transporteEmisiones = 0;
+    switch (transporte) {
+        case "Automóvil privado":
+            transporteEmisiones = 2; // Suponiendo 2 kg CO2 por kilómetro recorrido
+            break;
+        case "Motocicleta":
+            transporteEmisiones = 1.5; // Motocicleta emite menos CO2
+            break;
+        case "Transporte público":
+            transporteEmisiones = 1; // El transporte público tiene menos emisiones
+            break;
+        case "Bicicleta":
+            transporteEmisiones = 0.2; // Casi nula emisión de CO2
+            break;
+        case "A pie":
+            transporteEmisiones = 0; // No emite CO2
+            break;
+        default:
+            transporteEmisiones = 1; // Si es otro, asumimos un valor promedio
+    }
+
+    // Tiempo de recorrido
+    let tiempo = document.getElementById("tiempo").value;
+    let tiempoEmisiones = 0;
+    switch (tiempo) {
+        case "Menos de 15 minutos":
+            tiempoEmisiones = 0.2;
+            break;
+        case "15-30 minutos":
+            tiempoEmisiones = 0.5;
+            break;
+        case "30-60 minutos":
+            tiempoEmisiones = 1;
+            break;
+        case "Más de 60 minutos":
+            tiempoEmisiones = 1.5;
+            break;
+    }
+
+    // Comida de carne
+    let carne = document.getElementById("carne").value;
+    let carneEmisiones = 0;
+    if (carne === "Res") carneEmisiones = 3; // Res emite más CO2
+    if (carne === "Cerdo") carneEmisiones = 2;
+    if (carne === "Pollo") carneEmisiones = 1;
+    if (carne === "Pescado") carneEmisiones = 0.8;
+
+    // Tipo de residuos
+    let residuos = document.getElementById("residuos").value;
+    let residuosEmisiones = (residuos === "Basura general") ? 1 : 0.5; // Basura general tiene mayor huella
+
+    // Sistema de recolección de agua
+    let agua = document.getElementById("agua").value;
+    let aguaEmisiones = (agua === "No") ? 0.5 : 0;
+
+    // Consumo de ropa
+    let ropa = document.getElementById("ropa").value;
+    let ropaEmisiones = (ropa === "Compro nueva") ? 1 : 0.5;
+
+    // Calcular la huella de carbono total
+    let huellaTotal = electricidad * 0.5 + electrodomesticosEmisiones + transporteEmisiones + tiempoEmisiones + carneEmisiones + residuosEmisiones + aguaEmisiones + ropaEmisiones;
 
     // Actualizar el gráfico con el resultado
-    window.carbonChartInstance.data.datasets[0].data[0] = consumo;  // Esto es solo un ejemplo
+    window.carbonChartInstance.data.datasets[0].data = [
+        electricidad * 0.5, electrodomesticosEmisiones, transporteEmisiones, tiempoEmisiones, carneEmisiones,
+        residuosEmisiones, aguaEmisiones, ropaEmisiones
+    ];
     window.carbonChartInstance.update();
 
     // Mostrar el resultado
-    document.getElementById("resultado").innerHTML = `Tu huella de carbono estimada es de ${consumo} kg de CO₂ al mes.`;
+    document.getElementById("resultado").innerHTML = `Tu huella de carbono estimada es de ${huellaTotal.toFixed(2)} kg de CO₂ al mes.`;
 });
