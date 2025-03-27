@@ -1,0 +1,589 @@
+/* Estructura general */
+body {
+    padding: 0;
+    background-color: #f3f3f3; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Altura del viewport */
+    display: flex;
+    justify-content: flex-start; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    overflow-x: hidden; /* Evita scroll innecesario */
+    flex-direction: column; /* Apilamos los elementos en columna */
+    margin-top: 150px; /* Agrega un margen superior para separar el contenido */
+}
+
+/* Fondo dinámico para partículas */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar el fondo detrás del contenido */
+}
+
+/* Barra de navegación */
+.barra-navegacion {
+    width: 80%; /* Se ajusta al mismo ancho que el cuadro */
+    max-width: 800px;
+    height: 70px; /* Aumentamos la altura de la barra para que se vea bien con el logo más grande */
+    display: flex; /* Diseño flexible */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: space-between; /* Separar logo e ítems del menú */
+    padding: 0 20px; /* Espaciado interno */
+    background: none; /* La barra ahora es completamente transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    position: relative; /* Para que se alinee correctamente respecto al cuadro */
+    z-index: 10; /* Asegura que la barra esté encima del cuadro verde */
+    margin-bottom: 20px; /* Posiciona la barra pegada al cuadro verde */
+
+}
+
+/* Imagen o logo a la izquierda */
+.barra-navegacion img {
+    height: 200px; /* Aumentamos el tamaño de la imagen */
+    width: auto; /* Mantenemos las proporciones */
+    margin-bottom: 30px; /* Posiciona la barra pegada al cuadro verde */
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    gap: 15px; /* Espaciado entre ítems */
+    list-style: none; /* Eliminamos las viñetas */
+    margin: 0;
+    padding: 0;
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    gap: 15px; /* Espaciado entre ítems */
+    list-style: none; /* Eliminamos las viñetas */
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centra horizontalmente el menú */
+    align-items: center;
+}
+
+/* Elementos del menú */
+.menu li {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2E7D32; /* Texto verde oscuro */
+    padding: 10px 15px; /* Espaciado interno fijo */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Suaviza la animación */
+    background-color: transparent; /* Fondo inicial transparente */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño final */
+    width: 150px; /* Ancho fijo */
+    height: 50px; /* Altura inicial fija */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente el texto */
+    align-items: center; /* Centra verticalmente el texto */
+    text-align: center; /* Asegura centrado del texto múltiple */
+}
+
+/* Efecto hover */
+.menu li:hover {
+    background-color: #72B851; /* Fondo verde al pasar el cursor */
+    color: white; /* Texto blanco al hacer hover */
+    cursor: pointer; /* Indica que es clicable */
+    height: 150px; /* Solo cambia la altura al hacer hover */
+    z-index: 1; /* Indica que está encima de los demás */
+}
+.barra-navegacion .menu li a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Mantiene el color del texto igual que el del resto de la lista */
+}
+
+
+/* Cuadro verde */
+.cuadro-verde {
+    background-color: #72B851; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 33px; /* Espaciado general */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    width: 80%; /* Ancho similar al de la barra */
+    max-width: 800px; /* Ancho máximo */
+    text-align: center; /* Centrar texto dentro del cuadro */
+    position: relative; /* Para mantener consistencia en el diseño */
+    display: grid; /* Usamos Grid Layout */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+    font-weight: bold;
+}
+
+
+
+/* Carrusel */
+.carrusel {
+    position: relative;
+    overflow: hidden; /* Oculta imágenes fuera del área visible */
+    width: 100%; /* Se ajusta al 100% del ancho disponible */
+    height: 100%; /* Modifica la altura según necesites */
+}
+
+.carrusel-contenedor {
+    display: flex; /* Activa un diseño de carrusel horizontal */
+    transition: transform 0.5s ease-in-out; /* Animación suave durante el cambio */
+    width: 300%; /* 3 imágenes = 300% */
+}
+
+.carrusel-item {
+    flex: 0 0 100%; /* Cada imagen ocupa el 100% del carrusel visible */
+}
+
+.carrusel-item img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover; /* Adapta la imagen para ocupar el espacio del carrusel */
+    display: block;
+}
+
+.cuadro-verde h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff; /* Asegura buena visibilidad del título */
+    animation: fadeInDown 1s ease; /* Animación simple */
+}
+
+.fila {
+    display: flex;
+    margin: 10px 0;
+}
+
+.fila.tres-columnas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fila.primeracolumna {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fila.primeracolumna p{
+    font-size: 1rem;
+    justify-content: center;
+    color: black;
+}
+
+.fila.tres-columnas p {
+    color: black;
+    font-size: 11px;
+    text-align: justify;
+}
+
+.columna {
+    display: flex;
+    flex: 1;
+    background-color: rgba(0, 100, 0, 0);
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: center; /* Centra el contenido dentro de la columna */
+}
+
+.fila.cuatro-columnas {
+    display: flex;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    align-items: center; /* Centra las columnas verticalmente si hay espacio */
+    gap: 1rem; /* Espacio entre las columnas */
+    color: black;
+    font-size: 4px;
+}
+
+.columna4 {
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro de la columna */
+    align-items: center;
+    background-color: rgba(0, 100, 0, 0);
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.filafinal {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+footer {
+    background-color: #1c3d3c;
+    color: #bde0c5;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.logo h2 {
+    color: #77c04b;
+    font-size: 24px;
+}
+
+.footprint {
+    font-size: 20px;
+}
+
+p {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.links h3, .contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links ul li {
+    margin: 5px 0;
+}
+
+.links ul li a {
+    color: #bde0c5;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #bde0c5;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid #bde0c5;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 12px;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+
+/* From Uiverse.io by Yaya12085 */
+.task {
+    position: relative;
+    color: #2e2e2f;
+    cursor: move;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    margin-bottom: 1rem;
+    border: 3px dashed transparent;
+    max-width: 350px;
+}
+
+.task:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    border-color: rgba(162, 179, 207, 0.2) !important;
+}
+
+.task p {
+    font-size: 15px;
+    margin: 1.2rem 0;
+}
+
+.tag {
+    border-radius: 100px;
+    padding: 4px 13px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #1389eb;
+}
+
+.tags {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options {
+    background: transparent;
+    border: 0;
+    color: #c4cad3;
+    font-size: 17px;
+}
+
+.options svg {
+    fill: #9fa4aa;
+    width: 20px;
+}
+
+.stats {
+    position: relative;
+    width: 100%;
+    color: #9fa4aa;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stats div {
+    margin-right: 1rem;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stats svg {
+    margin-right: 5px;
+    height: 100%;
+    stroke: #9fa4aa;
+}
+
+.viewer span {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(28, 117, 219);
+    margin-right: -10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    padding: 2px;
+}
+
+.viewer span svg {
+    stroke: #fff;
+}
+
+/* styles.css */
+.row {
+    display: flex;
+    gap: 10px; /* Espacio entre columnas */
+}
+
+.fila.cuatro-columnas {
+    display: flex;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    align-items: center; /* Centra las columnas verticalmente si hay espacio */
+    gap: 1rem; /* Espacio entre las columnas */
+    color: black;
+    font-size: 4px;
+}
+
+.columna4 {
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro de la columna */
+    align-items: center;
+    background-color: rgba(0, 100, 0, 0);
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* From Uiverse.io by javierBarroso */
+.social-login-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    -webkit-box-reflect: below 5px linear-gradient(transparent, #00000055);
+}
+.social-login-icons svg {
+    width: 40px;
+}
+
+.social-icon-1,
+.social-icon-1-1,
+.social-icon-2,
+.social-icon-2-2,
+.social-icon-3,
+.social-icon-3-3,
+.social-icon-4,
+.social-icon-4-4 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin: 20px 0 0px 0;
+}
+
+.icon svg {
+    fill: #111;
+}
+
+.socialcontainer {
+    height: 80px;
+    overflow: hidden;
+}
+.social-icon-1 {
+    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 0);
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+}
+.social-icon-1 svg,
+.social-icon-2 svg,
+.social-icon-3 svg,
+.social-icon-4 svg {
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+}
+.social-icon-1-1 {
+    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 0, 0);
+}
+.socialcontainer:hover .social-icon-1 {
+    transform: translateY(-70px);
+}
+.socialcontainer:hover .social-icon-1 svg,
+.socialcontainer:hover .social-icon-2 svg,
+.socialcontainer:hover .social-icon-3 svg,
+.socialcontainer:hover .social-icon-4 svg {
+    opacity: 1;
+}
+.social-icon-2 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+    background: linear-gradient(
+            72.44deg,
+            #ff7a00 11.92%,
+            #ff0169 51.56%,
+            #d300c5 85.69%
+    );
+}
+.socialcontainer:hover .social-icon-2 {
+    transform: translateY(-70px);
+}
+.social-icon-3 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+    background: #316ff6;
+}
+
+.socialcontainer:hover .social-icon-3 {
+    transform: translateY(-70px);
+}
+.social-icon-4 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+
+    background: linear-gradient(
+            180deg,
+            rgba(129, 34, 144, 1) 0%,
+            rgba(77, 34, 124, 1) 91%
+    );
+}
+
+.socialcontainer:hover .social-icon-4 {
+    transform: translateY(-70px);
+}
+
+
+#particles-js {
+    position: fixed;  /* Fijar el contenedor en toda la página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegura que las partículas estén detrás del contenido */
+}
+
+
+/* Estilo para las preguntas del formulario */
+.container2 {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #333;
+}
+
+.form-control, .form-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2E7D32;
+    outline: none;
+}
+
+/* Botón de envío */
+button[type="submit"] {
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #1b5e20;
+}
+
+/* Estilo para el resultado */
+#resultado {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2E7D32;
+    margin-top: 20px;
+}
+
+/* Efectos de animación */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+/* Estilos para el cuadro de la calculadora */
+#carbon-form {
+    padding: 20px;
+    background-color: #F1F8E9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
