@@ -114,5 +114,5 @@ document.querySelector("form").addEventListener("submit", function(event) {
     window.carbonChartInstance.update();
 
     // Mostrar el resultado de la huella de carbono
-    document.getElementById("resultado").innerHTML = `Tu huella de carbono estimada es de ${huellaTotal.toFixed(2)} kg de CO₂ al mes.`;
+    document.getElementById("resultado").textContent = `${huellaTotal.toFixed(2)} kg CO₂`;
 });
