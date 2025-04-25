@@ -97,7 +97,6 @@ body {
     color: inherit; /* Mantiene el color del texto igual que el del resto de la lista */
 }
 
-
 /* Cuadro verde */
 .cuadro-verde {
     background-color: #72B851; /* Fondo verde */
@@ -106,7 +105,7 @@ body {
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
     width: 80%; /* Ancho similar al de la barra */
-    max-width: 800px; /* Ancho máximo */
+    max-width: 85%; /* Ancho máximo */
     text-align: center; /* Centrar texto dentro del cuadro */
     position: relative; /* Para mantener consistencia en el diseño */
     display: grid; /* Usamos Grid Layout */
@@ -118,8 +117,6 @@ h1 {
     animation: fadeInDown 1s ease;
     font-weight: bold;
 }
-
-
 
 /* Carrusel */
 .carrusel {
@@ -165,18 +162,33 @@ h1 {
     justify-content: space-between;
 }
 
+.fila.dos-columnas {
+    display: flex;
+    justify-content: space-between;
+}
+
 .fila.primeracolumna {
     display: flex;
     justify-content: space-between;
+    align-items: center;      /* Centrado vertical */
+    height: 100%;             /* Asegúrate que tenga altura */
 }
 
 .fila.primeracolumna p{
     font-size: 1rem;
     justify-content: center;
+    align-items: center;      /* Centrado vertical */
+    height: 100%;             /* Asegúrate que tenga altura */
     color: black;
 }
 
 .fila.tres-columnas p {
+    color: black;
+    font-size: 11px;
+    text-align: justify;
+}
+
+.fila.dos-columnas p {
     color: black;
     font-size: 11px;
     text-align: justify;
@@ -188,6 +200,16 @@ h1 {
     background-color: rgba(0, 100, 0, 0);
     margin: 0;
     padding: 10px;
+    border-radius: 5px;
+    justify-content: center; /* Centra el contenido dentro de la columna */
+}
+
+.columna2 {
+    display: flex;
+    flex: 1;
+    background-color: rgba(0, 100, 0, 0);
+    margin: 0;
+    padding: 0px;
     border-radius: 5px;
     justify-content: center; /* Centra el contenido dentro de la columna */
 }
@@ -388,7 +410,8 @@ p {
 /* styles.css */
 .row {
     display: flex;
-    gap: 10px; /* Espacio entre columnas */
+    justify-self: center;
+    gap: 100px; /* Espacio entre columnas */
 }
 
 .fila.cuatro-columnas {
