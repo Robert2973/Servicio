@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Huella de Carbono</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="../CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huella de Carbono</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Agregar Chart.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>
@@ -14,403 +15,461 @@
 
 <!-- Barra de navegación con logo más grande -->
 <div class="barra-navegacion">
-  <!-- Imagen/logo más grande -->
-  <img src="../IMG/Isotipo.png" alt="Logo">
-  <!-- Menú alineado a la derecha -->
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="calculadora.html">Calculadora de CO2</a></li>
-    <li><a href="nosotros.html">Nosotros</a></li>
-  </ul>
+    <!-- Imagen/logo más grande -->
+    <a href="index.html">
+        <img src="../IMG/Isotipo.png" alt="Logo" style="cursor:pointer;">
+    </a>
+    <!-- Menú alineado a la derecha -->
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="calculadora.html">Calculadora de CO2</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+    </ul>
 </div>
 
 <!-- Cuadro verde -->
-<div class="cuadro-verde animate__animated animate__fadeInUp">
+<div class="contenedor">
 
-  <div class="fila">
-    <p style="background-color: #2E7D32; color: white; width: auto; height: auto; padding: 5px 10px; margin: 0; border-radius: 0; display: inline-block; position: relative; text-align: left; float: left;">
-    ¡BIENVENIDO!
-  </p>
-  </div>
-
-  <div class="fila primeracolumna">
-    <div class="columna"><p>JUNTOS CAMBIEMOS EL PLANETA</p></div>
-    <div class="columna"><p>Cada acción cuenta. Conoce cuánto
-      CO2 emites en tu vida diaria y
-      descubre cómo reducir tu impacto
-      ambiental. ¡Juntos podemos construir
-      un futuro más sostenible!</p></div>
-    <div class="columna"><div class="columna">
-      <div class="carrusel">
-        <div class="carrusel-contenedor">
-          <div class="carrusel-item">
-            <img src="../imagen1.jpg" alt="Imagen 1">
-          </div>
-          <div class="carrusel-item">
-            <img src="../imagen1.jpg" alt="Imagen 2">
-          </div>
-          <div class="carrusel-item">
-            <img src="../imagen1.jpg" alt="Imagen 3">
-          </div>
-        </div>
-      </div>
-    </div></div>
-  </div>
-
-  <div class="fila">
-    <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
-      ¿Que es la huella de Carbono?
-    </p>
-  </div>
-
-  <div class="fila tres-columnas">
-    <div class="columna">
-      <div class="card" style="width: 17rem; margin: 0;">
-        <img src="../IMG/huella.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">La huella de carbono es un indicador ambiental esencial que se utiliza para medir la cantidad total de gases de efecto invernadero (GEI) emitidos a la atmósfera como resultado de actividades humanas. Estos gases, que incluyen el dióxido de carbono (CO2), el metano (CH4) y los óxidos de nitrógeno (N2O), desempeñan un papel crucial en el calentamiento global y el cambio climático. Su acumulación en la atmósfera tiene efectos profundos y alarmantes sobre los ecosistemas, la biodiversidad y la estabilidad del clima a nivel mundial. </p>
-        </div>
-      </div></div>
-    <div class="columna">
-      <div class="card" style="width: 22rem; margin: 0;">
-        <img src="../IMG/gases.jpg" class="card-img-top" alt="..." style="width: 22rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">
-            Cuando el equilibrio de los gases de efecto invernadero se altera, se desencadenan una serie de fenómenos climáticos extremos que tienen consecuencias significativas para el medio ambiente y la vida en el planeta. Estos fenómenos incluyen sequías prolongadas, que pueden resultar en la pérdida de cosechas y el agotamiento de fuentes de agua; inundaciones devastadoras, que destruyen infraestructuras y desplazan comunidades enteras; y olas de calor extremas, que no solo afectan la salud humana, sino que también perjudican a los ecosistemas naturales.
-
-            La alteración en el clima también provoca cambios en los patrones de migración y reproducción de numerosas especies, poniendo en peligro a aquellas que no pueden adaptarse lo suficientemente rápido a las nuevas condiciones. Esto puede llevar a la extinción de especies y a la pérdida de biodiversidad, un aspecto crucial para el equilibrio de los ecosistemas.           </p>
-        </div>
-      </div>
-      </div>
-    <div class="columna">
-      <div class="card" style="width: 17rem; margin: 0;">
-        <img src="../IMG/directa.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">La huella de carbono se puede generar de manera directa o indirecta. Las emisiones directas provienen de actividades como la quema de combustibles fósiles en vehículos, industrias y la producción de electricidad. Por otro lado, las emisiones indirectas están vinculadas al consumo de productos y servicios que, a lo largo de su ciclo de vida, desde la producción hasta la eliminación, generan también emisiones de GEI. Por ejemplo, alimentos que han sido transportados desde lugares lejanos, o productos manufacturados que requieren una gran cantidad de energía para su producción, contribuyen al aumento de nuestra huella de carbono.</p>
-        </div>
-      </div></div>
-  </div>
-
-  <div class="fila tres-columnas">
-    <div class="columna">
-      <div class="card" style="width: 17rem;">
-        <img src="../IMG/indicador.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">Este importante indicador ambiental se expresa en toneladas de dióxido de carbono equivalente (CO2e), lo que facilita la comparación del impacto de los diferentes gases de efecto invernadero, considerando su potencial de calentamiento global. Esta medida estandarizada permite a las empresas, gobiernos y a los individuos entender mejor el impacto de sus actividades y fomentar una mayor responsabilidad medioambiental.</p>
-        </div>
-      </div></div>
-    <div class="columna">
-      <div class="card" style="width: 22rem;">
-        <img src="../IMG/residuos.jpeg" class="card-img-top" alt="..." style="width: 22rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text"> El cálculo de la huella de carbono se basa en una variedad de factores que abarcan el uso de energía, los hábitos de transporte, el consumo de alimentos y productos, así como la generación de residuos. Medir y comprender nuestra huella de carbono es fundamental para adoptar estrategias sostenibles que reduzcan nuestro impacto ambiental. Este conocimiento nos proporciona una hoja de ruta hacia un futuro más sostenible y responsable. Estas elecciones individuales, aunque puedan parecer insignificantes, tienen el potencial de contribuir significativamente a la disminución de las emisiones globales y a la preservación del planeta para las futuras generaciones. Al asumir la responsabilidad de nuestra huella de carbono, no solo estamos actuando en beneficio del medio ambiente, sino también promoviendo un cambio cultural hacia prácticas más sostenibles y resilientes que son esenciales para enfrentar los desafíos climáticos que nos esperan. </p>
-        </div>
-      </div></div>
-    <div class="columna">
-      <div class="card" style="width: 17rem;">
-        <img src="../IMG/renovable.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">Realizar pequeños cambios en nuestro estilo de vida puede tener un gran impacto en la reducción de las emisiones de gases de efecto invernadero. Por ejemplo, optar por energías renovables como la solar o la eólica, reducir el consumo de carne y productos de origen animal, mejorar la eficiencia energética en nuestros hogares mediante el uso de electrodomésticos de bajo consumo y preferir medios de transporte ecológicos, como bicicletas o vehículos eléctricos, son algunas de las acciones que podemos implementar.  </p>
-        </div>
-      </div></div>
-  </div>
-
-  <div class="fila tres-columnas">
-    <div class="columna">
-      <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <p class="card-text">La huella de carbono es un concepto esencial para comprender el impacto que las actividades humanas tienen en el medio ambiente, y su importancia se extiende a lo largo de diversas áreas, incluyendo políticas ambientales, responsabilidad corporativa y educación. A nivel gubernamental, la medición de la huella de carbono permite a los países establecer metas de reducción de emisiones, alineándose con compromisos internacionales como el Acuerdo de París. Estos datos no solo son fundamentales para monitorear el progreso hacia objetivos climáticos, sino que también guiaron las inversiones en tecnologías limpias y energías renovables, identificando sectores críticos, como la agricultura y el transporte, que requieren acciones específicas para mejorar su eficiencia.
-
-            Dentro del ámbito empresarial, las organizaciones están cada vez más conscientes de la importancia de calcular y gestionar su huella de carbono. Publicar información sobre las emisiones y los esfuerzos para reducirlas puede mejorar la reputación de una empresa y atraer a consumidores que valoran la sostenibilidad. Además, las empresas pueden adoptar prácticas de economía circular, optimizando el uso de recursos y reduciendo residuos. Las certificaciones ambientales que garantizan la neutralidad de carbono son otra forma en que las empresas se comprometen formalmente a mitigar su impacto, lo que no solo es ético, sino que también proporciona ventajas competitivas en un mercado que valora la sostenibilidad.</p>
-        </div>
-      </div></div>
-    <div class="columna">
-      <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <p class="card-text"> En cuanto a la compensación de carbono, ha surgido como una estrategia común, pero es fundamental abordar este enfoque críticamente. Elegir proyectos verificados y transparentes garantiza que los esfuerzos para compensar las emisiones sean efectivos y realistas. Esto incluye invertir en iniciativas como la reforestación o los proyectos de energía renovable, que tienen un impacto positivo en la reducción de las emisiones de gases de efecto invernadero. Sin embargo, es crucial equilibrar los esfuerzos de compensación con la reducción directa de emisiones, promoviendo un cambio de comportamiento significativo.
-
-            La educación desempeña un papel crucial en la creación de conciencia sobre la huella de carbono. Implementar programas educativos en escuelas y comunidades puede cultivar una cultura de sostenibilidad desde una edad temprana. La concienciación pública, a través de campañas en redes sociales y otros medios, ayuda a sensibilizar a la sociedad sobre su impacto ambiental, fomentando un cambio en los hábitos diarios. La participación comunitaria es igualmente valiosa, ya que los grupos locales pueden colaborar en proyectos para reducir la huella de carbono, como iniciativas de reciclaje y limpieza ambiental. </p>
-        </div>
-      </div></div>
-    <div class="columna">
-      <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <p class="card-text">En el ámbito de la alimentación, nuestras decisiones también influyen en la huella de carbono. Adoptar dietas basadas en plantas no solo es beneficioso para la salud, sino que también reduce significativamente las emisiones asociadas con la producción de carne y productos lácteos. Promover la agricultura regenerativa y consumir alimentos locales y de temporada ayudan a minimizar el impacto ambiental. Estas prácticas no solo benefician al medio ambiente, sino que también pueden fortalecer las economías locales.
-
-            Finalmente, en la era digital, es vital considerar la huella de carbono asociada con nuestras actividades en línea. El uso de servicios en la nube y la transmisión de datos generan consumo energético significativo. Optar por proveedores que utilizan energías renovables para alimentar sus centros de datos y minimizar el uso innecesario de dispositivos electrónicos puede contribuir a reducir esta huella. Mirando hacia el futuro, el desarrollo de nuevas tecnologías, como la captura de carbono y herramientas de análisis de datos, promete facilitar un seguimiento más preciso de las emisiones y fomentar la colaboración global en la lucha contra el cambio climático.
-
-            Así, la huella de carbono se convierte en un eje central no solo para la sostenibilidad ambiental, sino también para la responsabilidad social y la construcción de un futuro más saludable y equilibrado para todos. Cada acción cuenta, y la combinación de esfuerzos individuales, empresariales y gubernamentales es crucial para mitigar el cambio climático y preservar nuestro planeta para las generaciones venideras.
-          </p>
-        </div>
-      </div></div>
-  </div>
-
-
-  <div class="fila">
-    <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
-      Historia y evolucion
-    </p>
-  </div>
-
-  <div class="fila tres-columnas">
-    <div class="columna"><div class="card" style="width: 18rem;">
-      <img src="../IMG/historia.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 10rem; object-fit: cover;">
-      <div class="card-body">
-        <p class="card-text">El concepto de huella de carbono comenzó a tomar forma en la década de 1990, en un momento en que la preocupación por el cambio climático se convirtió en un tema central en los debates ambientales a nivel global. En este contexto, científicos y líderes mundiales reconocieron la necesidad de medir y comprender las emisiones de gases de efecto invernadero (GEI) para evaluar el impacto humano sobre el medio ambiente. La “huella de carbono” emergió como una representación cuantitativa de las emisiones de dióxido de carbono (CO2) y otros GEI asociadas a nuestras actividades diarias, desde el transporte y la agricultura hasta la producción industrial y el uso de energía en los hogares.
-         <br>
-          A medida que avanzaba la década de 1990, la acumulación de evidencia científica sobre el cambio climático impulsó la creación de iniciativas internacionales dirigidas a establecer marcos de acción y compromiso. El Protocolo de Kioto, adoptado en 1997, marcó un hito importante, ya que fue el primer acuerdo internacional que vinculó a los países desarrollados a objetivos específicos de reducción de emisiones. Este acuerdo incentivó a los países a medir y reportar sus huellas de carbono, promoviendo mecanismos de mercado como el comercio de emisiones, que permiten a los países comprarse entre sí créditos de carbono como una forma de cumplir con sus metas. Aquí, la huella de carbono se consolidó como una herramienta vital para evaluar el avance hacia los objetivos de reducción establecidos..</p>
-      </div>
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; width: auto; height: auto; padding: 5px 10px; margin: 0; border-radius: 0; display: inline-block; position: relative; text-align: left; float: left;">
+            ¡BIENVENIDO!
+        </p>
     </div>
-     </div>
-    <div class="columna">
-      <div class="card" style="width: 18rem;">
-        <img src="../IMG/protocolo.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 10rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">El siglo XXI trajo consigo una intensificación de los esfuerzos y acuerdos relacionados con la huella de carbono. En 2015, el Acuerdo de París se convirtió en otro referente global. Este pacto no solo reafirmó la necesidad de limitar el calentamiento global a menos de 2°C sobre los niveles preindustriales, sino que también promovió la idea de que los países deben establecer y cumplir con “contribuciones determinadas a nivel nacional” (NDC) que incluyan metas claras de reducción de emisiones. En este marco, tanto países como empresas se vieron incentivados a calcular y comunicar sus huellas de carbono de forma más transparente y precisa, en un esfuerzo por demostrar su compromiso con la lucha contra el cambio climático.
-            <br>
-            La evolución de la huella de carbono también se ha visto influenciada por el crecimiento de la conciencia pública sobre la sostenibilidad y el cambio climático. Movimientos sociales, campañas de sensibilización y el activismo ambiental han llevado a las personas y comunidades a exigir más responsabilidad a los gobiernos y a las corporaciones. Esto ha fomentado un aumento en la demanda de informes de sostenibilidad y la adopción de programas de reducción de emisiones por parte de empresas de todos los tamaños. Las iniciativas de responsabilidad social corporativa (RSC) han comenzado a incluir la huella de carbono como un componente central en sus políticas operativas, lo que refleja la creciente expectativa de que las empresas no solo se centren en la rentabilidad, sino también en su impacto ambiental y social.</p>
+
+    <div class="fila primeracolumna">
+        <div class="columna"><p>JUNTOS CAMBIEMOS EL PLANETA</p></div>
+        <div class="columna"><p>Cada acción cuenta. Conoce cuánto
+            CO2 emites en tu vida diaria y
+            descubre cómo reducir tu impacto
+            ambiental. ¡Juntos podemos construir
+            un futuro más sostenible!</p></div>
+        <div class="columna"><div class="columna">
+            <div class="carrusel">
+                <div class="carrusel-contenedor">
+                    <div class="carrusel-item">
+                        <img src="../IMG/img.png" alt="Imagen 1">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="../IMG/img_1.png" alt="Imagen 2">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="../IMG/img_2.png" alt="Imagen 3">
+                    </div>
+                </div>
+            </div>
+        </div></div>
+    </div>
+
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
+            ¿Que es la huella de Carbono?
+        </p>
+    </div>
+
+    <div class="fila tres-columnas">
+        <div class="columna">
+            <div class="card" style="width: 17rem; margin: 0;">
+                <img src="../IMG/huella.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">La huella de carbono es un indicador ambiental esencial que se utiliza para medir la cantidad total de gases de efecto invernadero (GEI) emitidos a la atmósfera como resultado de actividades humanas. Estos gases, que incluyen el dióxido de carbono (CO2), el metano (CH4) y los óxidos de nitrógeno (N2O), desempeñan un papel crucial en el calentamiento global y el cambio climático. Su acumulación en la atmósfera tiene efectos profundos y alarmantes sobre los ecosistemas, la biodiversidad y la estabilidad del clima a nivel mundial. </p>
+                </div>
+            </div></div>
+        <div class="columna">
+            <div class="card" style="width: 22rem; margin: 0;">
+                <img src="../IMG/gases.jpg" class="card-img-top" alt="..." style="width: 22rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">
+                        Cuando el equilibrio de los gases de efecto invernadero se altera, se desencadenan una serie de fenómenos climáticos extremos que tienen consecuencias significativas para el medio ambiente y la vida en el planeta. Estos fenómenos incluyen sequías prolongadas, que pueden resultar en la pérdida de cosechas y el agotamiento de fuentes de agua; inundaciones devastadoras, que destruyen infraestructuras y desplazan comunidades enteras; y olas de calor extremas, que no solo afectan la salud humana, sino que también perjudican a los ecosistemas naturales.
+
+                        La alteración en el clima también provoca cambios en los patrones de migración y reproducción de numerosas especies, poniendo en peligro a aquellas que no pueden adaptarse lo suficientemente rápido a las nuevas condiciones. Esto puede llevar a la extinción de especies y a la pérdida de biodiversidad, un aspecto crucial para el equilibrio de los ecosistemas.           </p>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="columna">
+            <div class="card" style="width: 17rem; margin: 0;">
+                <img src="../IMG/directa.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">La huella de carbono se puede generar de manera directa o indirecta. Las emisiones directas provienen de actividades como la quema de combustibles fósiles en vehículos, industrias y la producción de electricidad. Por otro lado, las emisiones indirectas están vinculadas al consumo de productos y servicios que, a lo largo de su ciclo de vida, desde la producción hasta la eliminación, generan también emisiones de GEI. Por ejemplo, alimentos que han sido transportados desde lugares lejanos, o productos manufacturados que requieren una gran cantidad de energía para su producción, contribuyen al aumento de nuestra huella de carbono.</p>
+                </div>
+            </div></div>
     </div>
-    <div class="columna">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <p class="card-text">En este contexto, el desarrollo tecnológico ha jugado un papel clave en la manera en que se mide y gestiona la huella de carbono. Herramientas digitales, plataformas de análisis de datos y aplicaciones móviles permiten a individuos y organizaciones calcular sus emisiones de manera más precisa y en tiempo real. Además, se han desarrollado nuevos enfoques de compensación de carbono que buscan no solo neutralizar las emisiones, sino también fomentar prácticas sostenibles en las comunidades locales.
-            <br>
-            Hoy en día, cada vez más personas y organizaciones reconocen que reducir la huella de carbono no es solo una responsabilidad ética, sino también una oportunidad para innovar y prosperar en un futuro sostenible. Las acciones individuales, desde la reducción del uso de plásticos hasta la elección de energías renovables, complementan los esfuerzos a nivel empresarial y gubernamental. Este enfoque integrado es crítico para abordar los retos ambientales actuales y para fomentar un mundo más sostenible, minimizando el riesgo de desastres naturales y preservando la biodiversidad.
-            <br>
-            De cara al futuro, el desafío permanece: la huella de carbono continuará evolucionando como un indicador vital de nuestra relación con el medio ambiente, guiándonos hacia prácticas más sostenibles y responsables en la búsqueda de un equilibrio entre el desarrollo humano y la salud del planeta.
-          </p>
+
+    <div class="fila tres-columnas">
+        <div class="columna">
+            <div class="card" style="width: 17rem;">
+                <img src="../IMG/indicador.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">Este importante indicador ambiental se expresa en toneladas de dióxido de carbono equivalente (CO2e), lo que facilita la comparación del impacto de los diferentes gases de efecto invernadero, considerando su potencial de calentamiento global. Esta medida estandarizada permite a las empresas, gobiernos y a los individuos entender mejor el impacto de sus actividades y fomentar una mayor responsabilidad medioambiental.</p>
+                </div>
+            </div></div>
+        <div class="columna">
+            <div class="card" style="width: 22rem;">
+                <img src="../IMG/residuos.jpeg" class="card-img-top" alt="..." style="width: 22rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text"> El cálculo de la huella de carbono se basa en una variedad de factores que abarcan el uso de energía, los hábitos de transporte, el consumo de alimentos y productos, así como la generación de residuos. Medir y comprender nuestra huella de carbono es fundamental para adoptar estrategias sostenibles que reduzcan nuestro impacto ambiental. Este conocimiento nos proporciona una hoja de ruta hacia un futuro más sostenible y responsable. Estas elecciones individuales, aunque puedan parecer insignificantes, tienen el potencial de contribuir significativamente a la disminución de las emisiones globales y a la preservación del planeta para las futuras generaciones. Al asumir la responsabilidad de nuestra huella de carbono, no solo estamos actuando en beneficio del medio ambiente, sino también promoviendo un cambio cultural hacia prácticas más sostenibles y resilientes que son esenciales para enfrentar los desafíos climáticos que nos esperan. </p>
+                </div>
+            </div></div>
+        <div class="columna">
+            <div class="card" style="width: 17rem;">
+                <img src="../IMG/renovable.jpg" class="card-img-top" alt="..." style="width: 17rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">Realizar pequeños cambios en nuestro estilo de vida puede tener un gran impacto en la reducción de las emisiones de gases de efecto invernadero. Por ejemplo, optar por energías renovables como la solar o la eólica, reducir el consumo de carne y productos de origen animal, mejorar la eficiencia energética en nuestros hogares mediante el uso de electrodomésticos de bajo consumo y preferir medios de transporte ecológicos, como bicicletas o vehículos eléctricos, son algunas de las acciones que podemos implementar.  </p>
+                </div>
+            </div></div>
+    </div>
+
+    <div class="fila tres-columnas">
+        <div class="columna">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <p class="card-text">La huella de carbono es un concepto esencial para comprender el impacto que las actividades humanas tienen en el medio ambiente, y su importancia se extiende a lo largo de diversas áreas, incluyendo políticas ambientales, responsabilidad corporativa y educación. A nivel gubernamental, la medición de la huella de carbono permite a los países establecer metas de reducción de emisiones, alineándose con compromisos internacionales como el Acuerdo de París. Estos datos no solo son fundamentales para monitorear el progreso hacia objetivos climáticos, sino que también guiaron las inversiones en tecnologías limpias y energías renovables, identificando sectores críticos, como la agricultura y el transporte, que requieren acciones específicas para mejorar su eficiencia.
+
+                        Dentro del ámbito empresarial, las organizaciones están cada vez más conscientes de la importancia de calcular y gestionar su huella de carbono. Publicar información sobre las emisiones y los esfuerzos para reducirlas puede mejorar la reputación de una empresa y atraer a consumidores que valoran la sostenibilidad. Además, las empresas pueden adoptar prácticas de economía circular, optimizando el uso de recursos y reduciendo residuos. Las certificaciones ambientales que garantizan la neutralidad de carbono son otra forma en que las empresas se comprometen formalmente a mitigar su impacto, lo que no solo es ético, sino que también proporciona ventajas competitivas en un mercado que valora la sostenibilidad.</p>
+                </div>
+            </div></div>
+        <div class="columna">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <p class="card-text"> En cuanto a la compensación de carbono, ha surgido como una estrategia común, pero es fundamental abordar este enfoque críticamente. Elegir proyectos verificados y transparentes garantiza que los esfuerzos para compensar las emisiones sean efectivos y realistas. Esto incluye invertir en iniciativas como la reforestación o los proyectos de energía renovable, que tienen un impacto positivo en la reducción de las emisiones de gases de efecto invernadero. Sin embargo, es crucial equilibrar los esfuerzos de compensación con la reducción directa de emisiones, promoviendo un cambio de comportamiento significativo.
+
+                        La educación desempeña un papel crucial en la creación de conciencia sobre la huella de carbono. Implementar programas educativos en escuelas y comunidades puede cultivar una cultura de sostenibilidad desde una edad temprana. La concienciación pública, a través de campañas en redes sociales y otros medios, ayuda a sensibilizar a la sociedad sobre su impacto ambiental, fomentando un cambio en los hábitos diarios. La participación comunitaria es igualmente valiosa, ya que los grupos locales pueden colaborar en proyectos para reducir la huella de carbono, como iniciativas de reciclaje y limpieza ambiental. </p>
+                </div>
+            </div></div>
+        <div class="columna">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <p class="card-text">En el ámbito de la alimentación, nuestras decisiones también influyen en la huella de carbono. Adoptar dietas basadas en plantas no solo es beneficioso para la salud, sino que también reduce significativamente las emisiones asociadas con la producción de carne y productos lácteos. Promover la agricultura regenerativa y consumir alimentos locales y de temporada ayudan a minimizar el impacto ambiental. Estas prácticas no solo benefician al medio ambiente, sino que también pueden fortalecer las economías locales.
+
+                        Finalmente, en la era digital, es vital considerar la huella de carbono asociada con nuestras actividades en línea. El uso de servicios en la nube y la transmisión de datos generan consumo energético significativo. Optar por proveedores que utilizan energías renovables para alimentar sus centros de datos y minimizar el uso innecesario de dispositivos electrónicos puede contribuir a reducir esta huella. Mirando hacia el futuro, el desarrollo de nuevas tecnologías, como la captura de carbono y herramientas de análisis de datos, promete facilitar un seguimiento más preciso de las emisiones y fomentar la colaboración global en la lucha contra el cambio climático.
+
+                        Así, la huella de carbono se convierte en un eje central no solo para la sostenibilidad ambiental, sino también para la responsabilidad social y la construcción de un futuro más saludable y equilibrado para todos. Cada acción cuenta, y la combinación de esfuerzos individuales, empresariales y gubernamentales es crucial para mitigar el cambio climático y preservar nuestro planeta para las generaciones venideras.
+                    </p>
+                </div>
+            </div></div>
+    </div>
+
+
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
+            Historia y evolucion
+        </p>
+    </div>
+
+    <div class="fila tres-columnas">
+        <div class="columna"><div class="card" style="width: 18rem;">
+            <img src="../IMG/historia.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 10rem; object-fit: cover;">
+            <div class="card-body">
+                <p class="card-text">El concepto de huella de carbono comenzó a tomar forma en la década de 1990, en un momento en que la preocupación por el cambio climático se convirtió en un tema central en los debates ambientales a nivel global. En este contexto, científicos y líderes mundiales reconocieron la necesidad de medir y comprender las emisiones de gases de efecto invernadero (GEI) para evaluar el impacto humano sobre el medio ambiente. La “huella de carbono” emergió como una representación cuantitativa de las emisiones de dióxido de carbono (CO2) y otros GEI asociadas a nuestras actividades diarias, desde el transporte y la agricultura hasta la producción industrial y el uso de energía en los hogares.
+                    <br>
+                    A medida que avanzaba la década de 1990, la acumulación de evidencia científica sobre el cambio climático impulsó la creación de iniciativas internacionales dirigidas a establecer marcos de acción y compromiso. El Protocolo de Kioto, adoptado en 1997, marcó un hito importante, ya que fue el primer acuerdo internacional que vinculó a los países desarrollados a objetivos específicos de reducción de emisiones. Este acuerdo incentivó a los países a medir y reportar sus huellas de carbono, promoviendo mecanismos de mercado como el comercio de emisiones, que permiten a los países comprarse entre sí créditos de carbono como una forma de cumplir con sus metas. Aquí, la huella de carbono se consolidó como una herramienta vital para evaluar el avance hacia los objetivos de reducción establecidos..</p>
+            </div>
         </div>
-        <img src="../IMG/futuro.png" class="card-img-top" alt="..." style="width: 18rem; height: 10rem; object-fit: cover;">
-      </div>
-
-    </div>
-  </div>
-
-  <div class="fila">
-    <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
-      ¿Cómo funciona?
-    </p>
-  </div>
-
-  <div class="fila">
-    <p style=" color: black; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
-      Nuestra calculadora se basa en la metodología GHG Protocol y te permite medir tu
-      impacto a partir de:
-    </p>
-  </div>
-
-  <div class="fila cuatro-columnas">
-
-    <div class="columna4">
-      <div class="card" style="width: 8rem;">
-      <p class="card-text" style="text-align: center">CONSUMO</p>
-        <img src="../IMG/consumo.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
-        <div class="card-body">
-        <p class="card-text">Frecuencia y tipo de
-          productos que compras</p>
-      </div>
-    </div>
-    </div>
-    <div class="columna4">
-      <div class="card" style="width: 8rem;">
-        <p class="card-text" style="text-align: center">ALIMENTACION</p>
-        <img src="../IMG/alimentacin.jpeg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">El tipo de dieta que llevas
-            y su impacto ambiental.</p>
         </div>
-      </div>
-    </div>
-    <div class="columna4">
-      <div class="card" style="width: 8rem;">
-        <p class="card-text" style="text-align: center">TRANSPORTE</p>
-        <img src="../IMG/transporte.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">¿Cómo te movilizas? y ¿Viajes realizas?</p>
+        <div class="columna">
+            <div class="card" style="width: 18rem;">
+                <img src="../IMG/protocolo.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 10rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">El siglo XXI trajo consigo una intensificación de los esfuerzos y acuerdos relacionados con la huella de carbono. En 2015, el Acuerdo de París se convirtió en otro referente global. Este pacto no solo reafirmó la necesidad de limitar el calentamiento global a menos de 2°C sobre los niveles preindustriales, sino que también promovió la idea de que los países deben establecer y cumplir con “contribuciones determinadas a nivel nacional” (NDC) que incluyan metas claras de reducción de emisiones. En este marco, tanto países como empresas se vieron incentivados a calcular y comunicar sus huellas de carbono de forma más transparente y precisa, en un esfuerzo por demostrar su compromiso con la lucha contra el cambio climático.
+                        <br>
+                        La evolución de la huella de carbono también se ha visto influenciada por el crecimiento de la conciencia pública sobre la sostenibilidad y el cambio climático. Movimientos sociales, campañas de sensibilización y el activismo ambiental han llevado a las personas y comunidades a exigir más responsabilidad a los gobiernos y a las corporaciones. Esto ha fomentado un aumento en la demanda de informes de sostenibilidad y la adopción de programas de reducción de emisiones por parte de empresas de todos los tamaños. Las iniciativas de responsabilidad social corporativa (RSC) han comenzado a incluir la huella de carbono como un componente central en sus políticas operativas, lo que refleja la creciente expectativa de que las empresas no solo se centren en la rentabilidad, sino también en su impacto ambiental y social.</p>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="columna">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">En este contexto, el desarrollo tecnológico ha jugado un papel clave en la manera en que se mide y gestiona la huella de carbono. Herramientas digitales, plataformas de análisis de datos y aplicaciones móviles permiten a individuos y organizaciones calcular sus emisiones de manera más precisa y en tiempo real. Además, se han desarrollado nuevos enfoques de compensación de carbono que buscan no solo neutralizar las emisiones, sino también fomentar prácticas sostenibles en las comunidades locales.
+                        <br>
+                        Hoy en día, cada vez más personas y organizaciones reconocen que reducir la huella de carbono no es solo una responsabilidad ética, sino también una oportunidad para innovar y prosperar en un futuro sostenible. Las acciones individuales, desde la reducción del uso de plásticos hasta la elección de energías renovables, complementan los esfuerzos a nivel empresarial y gubernamental. Este enfoque integrado es crítico para abordar los retos ambientales actuales y para fomentar un mundo más sostenible, minimizando el riesgo de desastres naturales y preservando la biodiversidad.
+                        <br>
+                        De cara al futuro, el desafío permanece: la huella de carbono continuará evolucionando como un indicador vital de nuestra relación con el medio ambiente, guiándonos hacia prácticas más sostenibles y responsables en la búsqueda de un equilibrio entre el desarrollo humano y la salud del planeta.
+                    </p>
+                </div>
+                <img src="../IMG/futuro.png" class="card-img-top" alt="..." style="width: 18rem; height: 10rem; object-fit: cover;">
+            </div>
 
+        </div>
     </div>
-    <div class="columna4">
-      <div class="card" style="width: 8rem;">
-        <p class="card-text" style="text-align: center">ENERGIA</p>
-        <img src="../IMG/energia.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
-        <div class="card-body">
-          <p class="card-text">¿Cuánta electricidad y
-            gas consumes?
-          </p>
-      </div>
+
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
+            ¿Cómo funciona?
+        </p>
     </div>
-  </div>
-</div>
 
-  <div class="filafinal">
-    <p style=" background-color: #2E7D32; color: white; padding: 5px 165px; font-size: 14px; margin: 0; border-radius: 0; position: relative; text-align: center; float: left; width: auto; height: auto;">
-      MÁS QUE UN CÁLCULO, UN COMPROMISO
-    </p>
-  </div>
+    <div class="fila">
+        <p style=" color: black; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
+            Nuestra calculadora se basa en la metodología GHG Protocol y te permite medir tu
+            impacto a partir de:
+        </p>
+    </div>
 
-  <div class="filafinal">
-    <p style="color: black; font-size: 11px; text-align: center; padding: 10px 20px; margin: 0;">
-      Reducir nuestra huella de carbono es más fácil de lo que parece. Aquí tienes algunas acciones clave:
-    </p>
-  </div>
+    <div class="fila cuatro-columnas">
 
-  <div class="filafinal">
-    <ul style="color: black; font-size: 11px; text-align: center; margin: 0; padding-left: 20px;">
-      Usa energías renovables y mejora la eficiencia energética en casa.<br>
-      Opta por medios de transporte sostenibles como la bicicleta o el transporte público.<br>
-      Reduce el consumo de carne y elige productos locales y de temporada.<br>
-      Disminuye el uso de plásticos y productos desechables.<br>
-      Apoya proyectos de reforestación y conservación.<br>
-    </ul>
-  </div>
+        <div class="columna4">
+            <div class="card" style="width: 8rem;">
+                <p class="card-text" style="text-align: center">CONSUMO</p>
+                <img src="../IMG/consumo.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">Frecuencia y tipo de
+                        productos que compras</p>
+                </div>
+            </div>
+        </div>
+        <div class="columna4">
+            <div class="card" style="width: 8rem;">
+                <p class="card-text" style="text-align: center">ALIMENTACION</p>
+                <img src="../IMG/alimentacin.jpeg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">El tipo de dieta que llevas
+                        y su impacto ambiental.</p>
+                </div>
+            </div>
+        </div>
+        <div class="columna4">
+            <div class="card" style="width: 8rem;">
+                <p class="card-text" style="text-align: center">TRANSPORTE</p>
+                <img src="../IMG/transporte.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">¿Cómo te movilizas? y ¿Viajes realizas?</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="columna4">
+            <div class="card" style="width: 8rem;">
+                <p class="card-text" style="text-align: center">ENERGIA</p>
+                <img src="../IMG/energia.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+                <div class="card-body">
+                    <p class="card-text">¿Cuánta electricidad y
+                        gas consumes?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
+            MÁS QUE UN CÁLCULO, UN COMPROMISO
+        </p>
+    </div>
+
+    <div class="filafinal">
+        <p style="color: black; font-size: 11px; text-align: center; padding: 10px 20px; margin: 0;">
+            Reducir nuestra huella de carbono es más fácil de lo que parece. Aquí tienes algunas acciones clave:
+        </p>
+    </div>
+
+    <div class="filafinal">
+        <ul style="color: black; font-size: 11px; text-align: center; margin: 0; padding-left: 20px;">
+            Usa energías renovables y mejora la eficiencia energética en casa.<br>
+            Opta por medios de transporte sostenibles como la bicicleta o el transporte público.<br>
+            Reduce el consumo de carne y elige productos locales y de temporada.<br>
+            Disminuye el uso de plásticos y productos desechables.<br>
+            Apoya proyectos de reforestación y conservación.<br>
+        </ul>
+    </div>
 
 </div>
 
 <footer>
-  <div class="footer-container">
-    <div class="logo">
-      <h2>HUELLA DE CO<sub>2</sub> <span class="footprint">🦶</span></h2>
-      <p>
-        Nos comprometemos a ofrecer soluciones prácticas para mitigar estos efectos,
-        promoviendo el voluntariado y la colaboración colectiva para construir un futuro
-        más sostenible y resiliente para todos.
-      </p>
-    </div>
+    <div class="footer-container">
+        <div class="logo">
+            <h2>HUELLA DE CO<sub>2</sub> <span class="footprint">🦶</span></h2>
+            <p>
+                Nos comprometemos a ofrecer soluciones prácticas para mitigar estos efectos,
+                promoviendo el voluntariado y la colaboración colectiva para construir un futuro
+                más sostenible y resiliente para todos.
+            </p>
+        </div>
 
-    <div class="links">
-      <h3>Enlaces útiles</h3>
-      <ul>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Términos y condiciones de uso</a></li>
-        <li><a href="#">Política de privacidad</a></li>
-      </ul>
-    </div>
+        <div class="links">
+            <h3>Enlaces útiles</h3>
+            <ul>
+                <li><a href="#" data-info="about">Acerca de</a></li>
+                <li><a href="#" data-info="terms">Términos y condiciones de uso</a></li>
+                <li><a href="#" data-info="privacy">Política de privacidad</a></li>
+            </ul>
+        </div>
 
-    <div class="contact">
-      <h3>Redes</h3>
-      <div class="social-login-icons">
-        <div class="socialcontainer">
-          <div class="icon social-icon-1-1">
-            <svg
-                    viewBox="0 0 512 512"
-                    height="1.7em"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="svgIcontwit"
-                    fill="white"
-            >
-              <path
-                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-              ></path>
-            </svg>
-          </div>
-          <a href="https://x.com/BUAPoficial" target="_blank">
-            <div class="social-icon-1">
-              <svg
-                      viewBox="0 0 512 512"
-                      height="1.7em"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="svgIcontwit"
-                      fill="white"
-              >
-                <path
-                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-                ></path>
-              </svg>
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalText"></p>
             </div>
-          </a>
         </div>
-        <div class="socialcontainer">
-          <div class="icon social-icon-2-2">
-            <svg
-                    fill="white"
-                    class="svgIcon"
-                    viewBox="0 0 448 512"
-                    height="1.5em"
-                    xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-              ></path>
-            </svg>
-          </div>
-          <a href="https://www.instagram.com/buapoficial/" target="_blank">
-            <div class="social-icon-2">
-              <svg
-                      fill="white"
-                      class="svgIcon"
-                      viewBox="0 0 448 512"
-                      height="1.5em"
-                      xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                ></path>
-              </svg>
+
+        <div class="contact">
+            <h3>Redes</h3>
+            <div class="social-login-icons">
+                <div class="socialcontainer">
+                    <div class="icon social-icon-1-1">
+                        <svg
+                                viewBox="0 0 512 512"
+                                height="1.7em"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="svgIcontwit"
+                                fill="white"
+                        >
+                            <path
+                                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <a href="https://x.com/BUAPoficial" target="_blank">
+                        <div class="social-icon-1">
+                            <svg
+                                    viewBox="0 0 512 512"
+                                    height="1.7em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="svgIcontwit"
+                                    fill="white"
+                            >
+                                <path
+                                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="socialcontainer">
+                    <div class="icon social-icon-2-2">
+                        <svg
+                                fill="white"
+                                class="svgIcon"
+                                viewBox="0 0 448 512"
+                                height="1.5em"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <a href="https://www.instagram.com/buapoficial/" target="_blank">
+                        <div class="social-icon-2">
+                            <svg
+                                    fill="white"
+                                    class="svgIcon"
+                                    viewBox="0 0 448 512"
+                                    height="1.5em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="socialcontainer">
+                    <div class="icon social-icon-3-3">
+                        <svg
+                                viewBox="0 0 384 512"
+                                fill="white"
+                                height="1.6em"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <a href="https://www.facebook.com/BUAPoficial" target="_blank">
+                        <div class="social-icon-3">
+                            <svg
+                                    viewBox="0 0 384 512"
+                                    fill="white"
+                                    height="1.6em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="socialcontainer">
+                    <div class="icon social-icon-4-4">
+                        <svg fill="white" viewBox="0 0 496 512" height="1.6em">
+                            <path
+                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <a href="https://github.com/Surikey12/AccionClima" target="_blank">
+                        <div class="social-icon-4">
+                            <svg fill="white" viewBox="0 0 496 512" height="1.6em">
+                                <path
+                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
         </div>
-        <div class="socialcontainer">
-          <div class="icon social-icon-3-3">
-            <svg
-                    viewBox="0 0 384 512"
-                    fill="white"
-                    height="1.6em"
-                    xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                      d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
-              ></path>
-            </svg>
-          </div>
-          <a href="https://www.facebook.com/BUAPoficial" target="_blank">
-            <div class="social-icon-3">
-              <svg
-                      viewBox="0 0 384 512"
-                      fill="white"
-                      height="1.6em"
-                      xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                        d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
-                ></path>
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="socialcontainer">
-          <div class="icon social-icon-4-4">
-            <svg fill="white" viewBox="0 0 496 512" height="1.6em">
-              <path
-                      d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-              ></path>
-            </svg>
-          </div>
-          <a href="https://github.com/Surikey12/AccionClima" target="_blank">
-            <div class="social-icon-4">
-              <svg fill="white" viewBox="0 0 496 512" height="1.6em">
-                <path
-                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                ></path>
-              </svg>
-            </div>
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Clima México. Todos los derechos reservados.</p>
-  </div>
+    <div class="footer-bottom">
+        <p>© 2025 Clima México. Todos los derechos reservados.</p>
+    </div>
 </footer>
 
 
-  <!-- Script de partículas -->
+<!-- Script de partículas -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="../JS/carrusel.js"></script>
 <script src="../JS/particulas.js"></script>
+<script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+
+    // Contenido para cada link
+    const infoData = {
+        about: {
+            title: "Acerca de",
+            text: "Esta aplicación ayuda a calcular tu huella de carbono y ofrece recomendaciones para reducirla, contribuyendo al cuidado del medio ambiente."
+        },
+        terms: {
+            title: "Términos y condiciones de uso",
+            text: "Al usar esta aplicación aceptas que los datos proporcionados son aproximados y se usan sólo para fines informativos. No nos responsabilizamos por decisiones tomadas basadas en estos resultados."
+        },
+        privacy: {
+            title: "Política de privacidad",
+            text: "No recolectamos ni almacenamos información personal identificable. Todos los datos ingresados se usan exclusivamente para cálculos locales en tu navegador."
+        }
+    };
+
+    // Abrir modal con contenido correspondiente
+    document.querySelectorAll('.links a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const key = link.getAttribute('data-info');
+            if (infoData[key]) {
+                modalTitle.textContent = infoData[key].title;
+                modalText.textContent = infoData[key].text;
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    // Cerrar modal
+    closeModal.onclick = () => {
+        modal.style.display = 'none';
+    };
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = event => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>

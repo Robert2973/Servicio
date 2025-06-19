@@ -17,6 +17,7 @@ body {
     margin: 0 auto;
     padding: 0rem 6rem; /* o más según lo que necesites */
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 /* Fondo dinámico para partículas */
@@ -96,169 +97,191 @@ body {
     color: inherit;
 }
 
-/* =================== ESTILOS DE SECCIONES =================== */
-
-/* Títulos de sección en encabezados */
-.section-title {
-    background-color: #2E7D32;
-    color: white;
-    padding: 5px 10px;
-    margin: 0;
-    border-radius: 0;
-    position: relative;
-    text-align: left;
-    float: left;
-    width: auto;
-    height: auto;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* Texto en secciones */
-.section-text {
-    color: black;
-    padding: 5px 10px;
-    margin: 0;
-    border-radius: 0;
-    position: relative;
-    text-align: left;
-    float: left;
-    width: auto;
-    height: auto;
-}
-
-/* Lista en pie de página */
-.list-style {
-    color: black;
-    font-size: 11px;
-    margin: 0;
-    padding-left: 20px;
-}
-
-/* Títulos de las secciones de los carruseles o encabezados */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    animation: fadeInDown 1s ease;
-    font-weight: bold;
-}
-
-/* Para los títulos específicos (ej. "Historia y evolución") si quieres usar la misma clase */
-h2 {
-    font-size: clamp(1rem, 2vw, 2rem);
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ffffff; /* por si quieres mantenerlo igual */
-    animation: fadeInDown 1s ease;
-}
-
-/* =================== ESTILOS DE CARRUSEL =================== */
-.carrusel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-.carrusel-contenedor {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* 3 imágenes iguales */
-}
-.carrusel-item {
-    flex: 0 0 100%;
-}
-.carrusel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.carrusel-item {
-    aspect-ratio: 16 / 9; /* Puedes ajustar si quieres */
-}
-
-/* =================== ESTILOS DE FILAS Y COLUMNAS =================== */
 .fila {
     display: flex;
     margin: 10px 0;
 }
 
-/* Estilos para diferentes tipos de filas */
-.fila.tres-columnas,
-.fila.dos-columnas,
-.fila.cuatro-columnas,
-.fila.primeracolumna {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+/* =================== Formulario =================== */
+.form-step {
+    display: none;
 }
 
-/* Centrado vertical en primeracolumna */
-.fila.primeracolumna {
-    align-items: center;
-    height: 100%;
-}
-.fila.primeracolumna p {
-    font-size: 1rem;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: black;
+.form-step.active {
+    display: block;
 }
 
-/* Texto en filas con columnas */
-.fila.tres-columnas p,
-.fila.dos-columnas p {
-    color: black;
-    font-size: 11px;
-    text-align: justify;
+button {
+    margin-top: 20px;
 }
 
-/* Columnas generales */
-.columna,
-.columna2,
-.columna4 {
-    display: flex;
-    flex: 1;
-    background-color: rgba(0, 100, 0, 0);
-    margin: 0;
-    padding: 10px;
-    border-radius: 5px;
-    justify-content: center;
-}
-p{
-    font-size: .75rem;
-    padding: 0 10px;
+
+* {
     box-sizing: border-box;
+}
+
+form#carbonFootprintForm {
+    background: #fff;
+    max-width: 700px;
+    width: 100%;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(46, 125, 50, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+form#carbonFootprintForm:hover {
+    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.25);
+}
+
+h1, h2 {
     text-align: center;
+    color: #2e7d32;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
 }
 
-/* Para las columnas internas en "cuatro-columnas" */
-.fila.cuatro-columnas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    color: black;
-    font-size: 4px;
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
 }
 
-/* =================== ESTILOS DE TARJETAS =================== */
-.card {
+select {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+    border: 2px solid #b2dfdb;
+    border-radius: 6px;
+    background: #f9fefa;
+    font-size: 1rem;
+    color: #2e7d32;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* para eliminar flecha por defecto en algunos navegadores */
+    background-image:
+            linear-gradient(45deg, transparent 50%, #2e7d32 50%),
+            linear-gradient(135deg, #2e7d32 50%, transparent 50%);
+    background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+select:hover, select:focus {
+    border-color: #388e3c;
+    box-shadow: 0 0 8px rgba(56, 142, 60, 0.4);
+    color: #1b5e20;
+}
+
+button {
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin: 10px 5px 0 0;
+    box-shadow: 0 5px 10px rgba(46, 125, 50, 0.3);
 }
-.card-img-top {
-    width: 17rem; /* puedes ajustar en CSS si prefieres */
-    height: 10rem;
-    object-fit: cover;
+
+button:hover {
+    background-color: #1b5e20;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(27, 94, 32, 0.5);
 }
-/* Agrega la clase para las imágenes específicas */
-.img-card {
-    width: 17rem;
-    height: 10rem;
-    object-fit: cover;
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(27, 94, 32, 0.4);
+}
+
+.form-step {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#resultado {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2e7d32;
+    margin: 20px 0;
+    letter-spacing: 0.05em;
+}
+
+#recomendaciones {
+    background: #dcedc8;
+    padding: 20px;
+    border-radius: 10px;
+    color: #33691e;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(51, 105, 30, 0.1);
+}
+
+/* Canvas centrar */
+canvas#carbonChart {
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form#carbonFootprintForm {
+        padding: 25px 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+}
+
+/* =================== GRAFICA =================== */
+
+#carbonChart {
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(46, 125, 50, 0.15);
+    background: #f9fff9;
+    width: 100%;
+    max-width: 900%;
+    height: 450px !important;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.8s forwards;
+    margin: 25px auto 0;
+}
+
+/* Animación fade y slide up */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -392,6 +415,7 @@ p{
 .socialcontainer:hover .social-icon-4 {
     transform: translateY(-70px);
 }
+
 /* =================== PIE DE PÁGINA =================== */
 footer {
     background-color: #1c3d3c;
@@ -514,3 +538,4 @@ footer p {
         text-align: center;
     }
 }
+

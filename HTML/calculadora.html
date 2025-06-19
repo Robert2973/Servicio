@@ -6,7 +6,7 @@
     <title>Huella de Carbono</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Agregar Chart.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/calculadora.css">
     <script src="../JS/formulario.js"></script>
 
 </head>
@@ -18,7 +18,9 @@
 <!-- Barra de navegación con logo más grande -->
 <div class="barra-navegacion">
     <!-- Imagen/logo más grande -->
-    <img src="../IMG/Isotipo.png" alt="Logo">
+    <a href="index.html">
+        <img src="../IMG/Isotipo.png" alt="Logo" style="cursor:pointer;">
+    </a>
     <!-- Menú alineado a la derecha -->
     <ul class="menu">
         <li><a href="index.html">Inicio</a></li>
@@ -28,230 +30,245 @@
 </div>
 
 <!-- Cuadro verde -->
-<div class="cuadro-verde animate__animated animate__fadeInUp">
+<div class="contenedor">
 
-    <div class="filafinal">
-        <p style=" background-color: #2E7D32; color: white; padding: 10px 175px; font-size: 14px; margin: 0; border-radius: 0; position: relative; text-align: center; float: left; width: auto; height: auto;">
-            MÁS QUE UN CÁLCULO, UN COMPROMISO
-        </p>
-    </div>
 
-    <div class="filafinal">
-        <p style="color: black; font-size: 11px; text-align: center; padding: 10px 20px; margin: 0;">
-            El cambio climático es real y cada uno de nosotros puede hacer la diferencia. Calcula tu huella de
-            carbono y empieza hoy mismo a tomar acción
-        </p>
-    </div>
+
 
     <!-- apartado del cuestionario -->
     <div class="container2 mt-5" style="color: black">
 
         <form id="carbonFootprintForm" >
             <h1 class="text-center" style="color: black">Calculadora de Huella de Carbono</h1>
-            <!-- Alcance 1: Emisiones Directas -->
-            <h2 style="color: black">Alcance 1: Emisiones Directas (Transporte, Combustión de Combustible, etc.)</h2>
 
-            <label for="kilometros_coche">¿Cuántos kilómetros recorres al mes en coche privado?</label>
-            <select id="kilometros_coche" name="kilometros_coche">
-                <option value="0-100">0-100 km</option>
-                <option value="101-300">101-300 km</option>
-                <option value="301-500">301-500 km</option>
-                <option value="501-1000">501-1000 km</option>
-                <option value="mas-1000">Más de 1000 km</option>
-            </select><br>
+            <div class="form-step active" id="step1">
+                <h2 style="color: black">Alcance 1: Emisiones Directas</h2>
 
-            <label for="transporte_publico">¿Utilizas transporte público?</label>
-            <select id="transporte_publico" name="transporte_publico">
-                <option value="no">No</option>
-                <option value="1-2 veces">1-2 veces por semana</option>
-                <option value="3-5 veces">3-5 veces por semana</option>
-                <option value="mas-5 veces">Más de 5 veces por semana</option>
-            </select><br>
+                <label for="km_auto">¿Cuántos kilómetros recorres al mes en coche propio?</label>
+                <select id="km_auto" name="km_auto">
+                    <option value="0-100">0-100 km</option>
+                    <option value="101-300">101-300 km</option>
+                    <option value="301-500">301-500 km</option>
+                    <option value="501-1000">501-1000 km</option>
+                    <option value="mas-1000">Más de 1000 km</option>
+                </select><br>
 
-            <label for="kilometros_moto">¿Cuántos kilómetros recorres al mes en motocicleta?</label>
-            <select id="kilometros_moto" name="kilometros_moto">
-                <option value="0-100">0-100 km</option>
-                <option value="101-200">101-200 km</option>
-                <option value="201-300">201-300 km</option>
-                <option value="mas-300">Más de 300 km</option>
-            </select><br>
+                <label for="km_moto">¿Cuántos kilómetros recorres al mes en motocicleta propia?</label>
+                <select id="km_moto" name="km_moto">
+                    <option value="0-100">0-100 km</option>
+                    <option value="101-200">101-200 km</option>
+                    <option value="201-300">201-300 km</option>
+                    <option value="mas-300">Más de 300 km</option>
+                </select><br>
 
-            <label for="kilometros_bicicleta">¿Cuántos kilómetros recorres al mes en bicicleta?</label>
-            <select id="kilometros_bicicleta" name="kilometros_bicicleta">
-                <option value="0-50">0-50 km</option>
-                <option value="51-100">51-100 km</option>
-                <option value="101-200">101-200 km</option>
-                <option value="mas-200">Más de 200 km</option>
-            </select><br>
+                <label for="combustible_auto">¿Qué tipo de combustible utiliza tu vehículo principal?</label>
+                <select id="combustible_auto" name="combustible_auto">
+                    <option value="gasolina">Gasolina</option>
+                    <option value="diesel">Diésel</option>
+                    <option value="gas">Gas (LP o natural)</option>
+                    <option value="electrico">Eléctrico</option>
+                    <option value="hibrido">Híbrido</option>
+                    <option value="no_aplica">No tengo vehículo</option>
+                </select><br>
 
-            <label for="viajes_avion">¿Cuántas veces al mes viajas en avión?</label>
-            <select id="viajes_avion" name="viajes_avion">
-                <option value="0">0 veces</option>
-                <option value="1-2">1-2 veces</option>
-                <option value="3-5">3-5 veces</option>
-                <option value="mas-5">Más de 5 veces</option>
-            </select><br>
+                <label for="calefaccion_tipo">¿Tienes calefacción en tu hogar?</label>
+                <select id="calefaccion_tipo" name="calefaccion_tipo">
+                    <option value="no">No</option>
+                    <option value="gas">Sí, de gas</option>
+                    <option value="madera">Sí, a base de leña</option>
+                    <option value="otro_combustible">Sí, con otro combustible (ej. parafina, carbón)</option>
+                </select><br>
 
-            <label for="calefaccion">¿Tienes calefacción a gas o eléctrica?</label>
-            <select id="calefaccion" name="calefaccion">
-                <option value="no">No</option>
-                <option value="gas">Gas</option>
-                <option value="electrica">Eléctrica</option>
-                <option value="ambas">Ambas</option>
-            </select><br>
+                <label for="chimenea">¿Utilizas chimenea o estufa con combustibles fósiles?</label>
+                <select id="chimenea" name="chimenea">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
 
-            <label for="generador">¿Utilizas algún generador eléctrico de emergencia?</label>
-            <select id="generador" name="generador">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="regular">Sí, regularmente</option>
-            </select><br>
+                <label for="generador">¿Utilizas generador eléctrico con combustible?</label>
+                <select id="generador" name="generador">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
 
-            <label for="chimenea">¿Tienes una chimenea o estufa que usa combustibles fósiles?</label>
-            <select id="chimenea" name="chimenea">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="regular">Sí, regularmente</option>
-            </select><br>
+                <label for="maquinaria">¿Usas maquinaria pesada con motor de combustión (en prácticas o trabajo)?</label>
+                <select id="maquinaria" name="maquinaria">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
 
-            <label for="maquinaria">¿Realizas actividades de campo que utilicen maquinaria pesada?</label>
-            <select id="maquinaria" name="maquinaria">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="regular">Sí, regularmente</option>
-            </select><br>
+                <label for="actividades_recreativas">¿Utilizas combustibles fósiles para actividades recreativas (barbacoas, camping, etc.)?</label>
+                <select id="actividades_recreativas" name="actividades_recreativas">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
 
-            <label for="combustibles_fossiles">¿Utilizas combustibles fósiles para actividades recreativas (ej. barbacoas, calentadores, etc.)?</label>
-            <select id="combustibles_fossiles" name="combustibles_fossiles">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="regular">Sí, regularmente</option>
-            </select><br>
+                <label for="aire_refrigeracion">¿Tienes aire acondicionado o refrigerador con gases refrigerantes?</label>
+                <select id="aire_refrigeracion" name="aire_refrigeracion">
+                    <option value="no">No</option>
+                    <option value="si_uso">Sí, pero no requiere mantenimiento</option>
+                    <option value="si_fugas">Sí, y ha tenido fugas o recargas de gas</option>
+                </select><br>
 
-            <!-- Alcance 2: Emisiones Indirectas por Consumo de Electricidad -->
-            <h2 style="color: black">Alcance 2: Emisiones Indirectas por Consumo de Electricidad</h2>
+                <button type="button" onclick="nextStep()">Continuar</button>
+            </div>
 
-            <label for="consumo_electricidad">¿Cuántos kilovatios de electricidad consumes mensualmente en tu hogar?</label>
-            <select id="consumo_electricidad" name="consumo_electricidad">
-                <option value="0-100">0-100 kWh</option>
-                <option value="101-200">101-200 kWh</option>
-                <option value="201-400">201-400 kWh</option>
-                <option value="mas-400">Más de 400 kWh</option>
-            </select><br>
+            <div class="form-step" id="step2">
+                <h2 style="color: black">Alcance 2: Emisiones Indirectas por Electricidad</h2>
 
-            <label for="uso_ac">¿Cuántas horas al día utilizas aire acondicionado o calefacción eléctrica?</label>
-            <select id="uso_ac" name="uso_ac">
-                <option value="no">No uso</option>
-                <option value="menos-2">Menos de 2 horas</option>
-                <option value="2-4">2-4 horas</option>
-                <option value="mas-4">Más de 4 horas</option>
-            </select><br>
+                <label for="residencia">¿Dónde vives durante el ciclo escolar?</label>
+                <select id="residencia" name="residencia">
+                    <option value="casa_familiar">En casa con mi familia</option>
+                    <option value="departamento">En departamento compartido</option>
+                    <option value="residencia_estudiantil">En residencia universitaria</option>
+                    <option value="otro">Otro</option>
+                </select><br>
 
-            <label for="uso_dispositivos">¿Cuántos dispositivos electrónicos usas en tu casa al día?</label>
-            <select id="uso_dispositivos" name="uso_dispositivos">
-                <option value="1-2">1-2 dispositivos</option>
-                <option value="3-5">3-5 dispositivos</option>
-                <option value="6-10">6-10 dispositivos</option>
-                <option value="mas-10">Más de 10 dispositivos</option>
-            </select><br>
+                <label for="consumo_electricidad">¿Cuántos kilovatios-hora (kWh) de electricidad consumes mensualmente en tu hogar?</label>
+                <select id="consumo_electricidad" name="consumo_electricidad">
+                    <option value="0-100">0-100 kWh</option>
+                    <option value="101-200">101-200 kWh</option>
+                    <option value="201-400">201-400 kWh</option>
+                    <option value="401-600">401-600 kWh</option>
+                    <option value="mas-600">Más de 600 kWh</option>
+                </select><br>
 
-            <label for="electrodomesticos_grandes">¿Cuántos electrodomésticos grandes (nevera, lavadora, etc.) usas?</label>
-            <select id="electrodomesticos_grandes" name="electrodomesticos_grandes">
-                <option value="1">1 electrodoméstico</option>
-                <option value="2">2 electrodomésticos</option>
-                <option value="3">3 electrodomésticos</option>
-                <option value="mas-3">Más de 3 electrodomésticos</option>
-            </select><br>
+                <label for="otros_usuarios">¿Compartes el consumo eléctrico con otras personas?</label>
+                <select id="otros_usuarios" name="otros_usuarios">
+                    <option value="no">No, soy el único usuario</option>
+                    <option value="2-3">Sí, lo comparto con 2-3 personas</option>
+                    <option value="mas-3">Sí, con más de 3 personas</option>
+                </select><br>
 
-            <label for="recargas_vehiculo">¿Cuántas veces al mes recargas tu coche eléctrico (si tienes uno)?</label>
-            <select id="recargas_vehiculo" name="recargas_vehiculo">
-                <option value="no">No tengo coche eléctrico</option>
-                <option value="1-2">1-2 veces</option>
-                <option value="3-5">3-5 veces</option>
-                <option value="mas-5">Más de 5 veces</option>
-            </select><br>
+                <label for="fuente_energia">¿Cuál es tu fuente principal de electricidad?</label>
+                <select id="fuente_energia" name="fuente_energia">
+                    <option value="red_convencional">Red eléctrica convencional (CFE u otra)</option>
+                    <option value="renovable_total">100% renovable (paneles solares/eólica)</option>
+                    <option value="mixta">Mixta: red eléctrica + energía renovable</option>
+                </select><br>
 
-            <label for="energia_renovable">¿Tienes paneles solares o alguna fuente de energía renovable?</label>
-            <select id="energia_renovable" name="energia_renovable">
-                <option value="no">No</option>
-                <option value="solares">Sí, paneles solares</option>
-                <option value="eolica">Sí, energía eólica</option>
-                <option value="otras">Sí, otra fuente renovable</option>
-            </select><br>
+                <label for="tarifa_verde">¿Tu hogar está inscrito en una tarifa de electricidad renovable (tarifa verde)?</label>
+                <select id="tarifa_verde" name="tarifa_verde">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                    <option value="no_se">No lo sé</option>
+                </select><br>
 
-            <label for="tiempo_luces">¿Cuántas horas al día mantienes las luces encendidas en tu casa?</label>
-            <select id="tiempo_luces" name="tiempo_luces">
-                <option value="menos-1">Menos de 1 hora</option>
-                <option value="1-3">1-3 horas</option>
-                <option value="4-6">4-6 horas</option>
-                <option value="mas-6">Más de 6 horas</option>
-            </select><br>
+                <label for="clima_central">¿Recibes calefacción o aire acondicionado central de parte del edificio o campus?</label>
+                <select id="clima_central" name="clima_central">
+                    <option value="no">No</option>
+                    <option value="si_calefaccion">Sí, calefacción</option>
+                    <option value="si_ac">Sí, aire acondicionado</option>
+                    <option value="ambos">Sí, ambos</option>
+                </select><br>
 
-            <label for="electrodomesticos_pequenos">¿Cuántos electrodomésticos pequeños (microondas, aspiradora, etc.) utilizas?</label>
-            <select id="electrodomesticos_pequenos" name="electrodomesticos_pequenos">
-                <option value="1-2">1-2 electrodomésticos</option>
-                <option value="3-5">3-5 electrodomésticos</option>
-                <option value="6-10">6-10 electrodomésticos</option>
-                <option value="mas-10">Más de 10 electrodomésticos</option>
-            </select><br>
+                <label for="recargas_ev">¿Cuántas veces al mes recargas un vehículo eléctrico (si tienes uno)?</label>
+                <select id="recargas_ev" name="recargas_ev">
+                    <option value="no">No tengo coche eléctrico</option>
+                    <option value="1-2">1-2 veces</option>
+                    <option value="3-5">3-5 veces</option>
+                    <option value="mas-5">Más de 5 veces</option>
+                </select><br>
 
-            <label for="consumo_ordenador">¿Cuánto tiempo mantienes tu ordenador encendido diariamente?</label>
-            <select id="consumo_ordenador" name="consumo_ordenador">
-                <option value="menos-2">Menos de 2 horas</option>
-                <option value="2-5">2-5 horas</option>
-                <option value="6-8">6-8 horas</option>
-                <option value="mas-8">Más de 8 horas</option>
-            </select><br>
+                <button type="button" onclick="prevStep()">Atrás</button>
+                <button type="button" onclick="nextStep()">Continuar</button>
+            </div>
 
-            <!-- Alcance 3: Otras Emisiones Indirectas -->
-            <h2 style="color: black">Alcance 3: Otras Emisiones Indirectas (Consumo, Bienes, Servicios)</h2>
+            <div class="form-step" id="step3">
+                <h2 style="color: black">Alcance 3: Otras Emisiones Indirectas</h2>
 
-            <label for="productos_empaques">¿Compras productos con empaques plásticos o no reciclables?</label>
-            <select id="productos_empaques" name="productos_empaques">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="frecuente">Sí, frecuentemente</option>
-            </select><br>
+                <label for="transporte_publico">¿Utilizas transporte público para llegar a la universidad?</label>
+                <select id="transporte_publico" name="transporte_publico">
+                    <option value="no">No</option>
+                    <option value="1-2">1-2 días por semana</option>
+                    <option value="3-5">3-5 días por semana</option>
+                    <option value="diario">Diariamente</option>
+                </select><br>
 
-            <label for="consumo_comida">¿Consumes alimentos de origen animal en grandes cantidades?</label>
-            <select id="consumo_comida" name="consumo_comida">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="regular">Sí, regularmente</option>
-            </select><br>
+                <label for="vuelos_comerciales">¿Cuántos vuelos comerciales realizas al año?</label>
+                <select id="vuelos_comerciales" name="vuelos_comerciales">
+                    <option value="0">Ninguno</option>
+                    <option value="1-2">1-2 vuelos</option>
+                    <option value="3-5">3-5 vuelos</option>
+                    <option value="mas-5">Más de 5 vuelos</option>
+                </select><br>
 
-            <label for="productos_electronicos">¿Compras productos electrónicos nuevos con frecuencia?</label>
-            <select id="productos_electronicos" name="productos_electronicos">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="frecuente">Sí, frecuentemente</option>
-            </select><br>
+                <label for="productos_empaques">¿Compras productos con empaques plásticos o no reciclables?</label>
+                <select id="productos_empaques" name="productos_empaques">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
 
-            <label for="ropa_nueva">¿Compras ropa nueva con frecuencia?</label>
-            <select id="ropa_nueva" name="ropa_nueva">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="frecuente">Sí, frecuentemente</option>
-            </select><br>
+                <label for="consumo_comida">¿Consumes alimentos de origen animal en grandes cantidades?</label>
+                <select id="consumo_comida" name="consumo_comida">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="regular">Sí, regularmente</option>
+                </select><br>
 
-            <label for="viajes_turismo">¿Realizas viajes de turismo o negocios frecuentes?</label>
-            <select id="viajes_turismo" name="viajes_turismo">
-                <option value="no">No</option>
-                <option value="ocasional">Sí, ocasionalmente</option>
-                <option value="frecuente">Sí, frecuentemente</option>
-            </select><br>
+                <label for="ropa_nueva">¿Compras ropa nueva con frecuencia?</label>
+                <select id="ropa_nueva" name="ropa_nueva">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
 
-            <button type="submit">Calcular Huella de Carbono</button>
+                <label for="productos_electronicos">¿Compras productos electrónicos nuevos con frecuencia?</label>
+                <select id="productos_electronicos" name="productos_electronicos">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
+
+                <label for="segunda_mano">¿Compras productos de segunda mano o reciclados?</label>
+                <select id="segunda_mano" name="segunda_mano">
+                    <option value="no">No</option>
+                    <option value="ocasional">Sí, ocasionalmente</option>
+                    <option value="frecuente">Sí, frecuentemente</option>
+                </select><br>
+
+                <label for="residuos">¿Se separan los residuos en tu hogar o residencia?</label>
+                <select id="residuos" name="residuos">
+                    <option value="no">No</option>
+                    <option value="parcial">Sí, parcialmente</option>
+                    <option value="si">Sí, correctamente</option>
+                </select><br>
+
+                <button type="button" onclick="prevStep()">Atrás</button>
+                <button type="button" onclick="nextStep()">Continuar</button>
+            </div>
+
+            <div class="form-step" id="step4">
+                <h2 style="color: black">Resultado</h2>
+                <p id="resultado" class="fw-bold">0 kg CO₂</p>
+
+                <h2 style="color: black">Recomendaciones</h2>
+                <div id="recomendaciones" style="
+                    margin-top: 20px;
+                    background: #e6f2e6;
+                    padding: 15px;
+                    border-radius: 8px;
+                    color: #2e7d32;
+                    font-weight: bold;
+                    font-family: Arial, sans-serif;
+                    line-height: 1.4;">
+                </div>
+
+                <h2 style="color: black">Datos recopilados</h2>
+                <canvas id="carbonChart"></canvas>
+
+                <button type="button" onclick="prevStep()">Atrás</button>
+                <button type="submit">Calcular Huella de Carbono</button>
+            </div>
+
         </form>
 
-
-        <div class="mt-4">
-            <h3>Resultado:</h3>
-            <p id="resultado" class="fw-bold">0 kg CO₂</p>
-            <canvas id="carbonChart"></canvas>
-        </div>
     </div>
-
 
 </div>
 
@@ -269,10 +286,19 @@
         <div class="links">
             <h3>Enlaces útiles</h3>
             <ul>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Términos y condiciones de uso</a></li>
-                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#" data-info="about">Acerca de</a></li>
+                <li><a href="#" data-info="terms">Términos y condiciones de uso</a></li>
+                <li><a href="#" data-info="privacy">Política de privacidad</a></li>
             </ul>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalText"></p>
+            </div>
         </div>
 
         <div class="contact">
@@ -396,5 +422,76 @@
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="../JS/particulas.js"></script>
 <script src="../JS/formulario.js"></script>
+<script>
+    let currentStep = 1;
+
+    function showStep(step) {
+        document.querySelectorAll('.form-step').forEach((el, index) => {
+            el.classList.remove('active');
+        });
+        document.getElementById(`step${step}`).classList.add('active');
+    }
+
+    function nextStep() {
+        if (currentStep < 4) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    }
+</script>
+<script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+
+    // Contenido para cada link
+    const infoData = {
+        about: {
+            title: "Acerca de",
+            text: "Esta aplicación ayuda a calcular tu huella de carbono y ofrece recomendaciones para reducirla, contribuyendo al cuidado del medio ambiente."
+        },
+        terms: {
+            title: "Términos y condiciones de uso",
+            text: "Al usar esta aplicación aceptas que los datos proporcionados son aproximados y se usan sólo para fines informativos. No nos responsabilizamos por decisiones tomadas basadas en estos resultados."
+        },
+        privacy: {
+            title: "Política de privacidad",
+            text: "No recolectamos ni almacenamos información personal identificable. Todos los datos ingresados se usan exclusivamente para cálculos locales en tu navegador."
+        }
+    };
+
+    // Abrir modal con contenido correspondiente
+    document.querySelectorAll('.links a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const key = link.getAttribute('data-info');
+            if (infoData[key]) {
+                modalTitle.textContent = infoData[key].title;
+                modalText.textContent = infoData[key].text;
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    // Cerrar modal
+    closeModal.onclick = () => {
+        modal.style.display = 'none';
+    };
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = event => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>

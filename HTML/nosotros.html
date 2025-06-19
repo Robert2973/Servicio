@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huella de Carbono</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Agregar Chart.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/nosotros.css">
 </head>
 
 <body>
@@ -15,7 +16,9 @@
 <!-- Barra de navegación con logo más grande -->
 <div class="barra-navegacion">
     <!-- Imagen/logo más grande -->
-    <img src="../IMG/Isotipo.png" alt="Logo">
+    <a href="index.html">
+        <img src="../IMG/Isotipo.png" alt="Logo" style="cursor:pointer;">
+    </a>
     <!-- Menú alineado a la derecha -->
     <ul class="menu">
         <li><a href="index.html">Inicio</a></li>
@@ -25,10 +28,10 @@
 </div>
 
 <!-- Cuadro verde -->
-<div class="cuadro-verde animate__animated animate__fadeInUp">
+<div class="contenedor">
 
-    <div class="filafinal">
-        <p style=" background-color: #2E7D32; color: white; padding: 10px 175px; font-size: 14px; margin-top: 5%; border-radius: 0; position: relative; text-align: center; float: left; width: auto; height: auto;">
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
             COLABORADORES
         </p>
     </div>
@@ -91,61 +94,72 @@
         </div>
     </div>
 
-    <div class="filafinal">
-        <p style=" background-color: #2E7D32; color: white; padding: 10px 175px; font-size: 14px; margin: 0; border-radius: 0; position: relative; text-align: center; float: left; width: auto; height: auto;">
-            Ubicación
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
+            UBICACION
         </p>
     </div>
 
-
-    <div class="fila tres-columnas">
-        <div class="columna"><div class="card" style="width: 50rem;">
-            <img src="../IMG/ubicacion.png" class="card-img-top" alt="..." style="width: 90%; height: 100%; object-fit: cover;">
-            <div class="card-body">
-                <p class="card-text" >104-B, Avenida San Claudio, Blvrd 14 Sur, Cdad. Universitaria, 72592 Heroica Puebla de Zaragoza, Pue.</p>
+    <div class="filaubi ubicacion-columnas">
+        <div class="columnaubi">
+            <div class="card2 card2-ubicacion">
+                <img src="../IMG/ubicacion.png" class="card2-img-top ubicacion-img" alt="Ubicación">
+                <div class="card2-body">
+                    <p class="card2-text">
+                        104-B, Avenida San Claudio, Blvrd 14 Sur, Cdad. Universitaria, 72592 Heroica Puebla de Zaragoza, Pue.
+                    </p>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 
-    <div class="filafinal">
-        <p style=" background-color: #2E7D32; color: white; padding: 10px 175px; font-size: 14px; margin-top: 5%; border-radius: 0; position: relative; text-align: center; float: left; width: auto; height: auto;">
+    <div class="fila">
+        <p style="background-color: #2E7D32; color: white; padding: 5px 10px; margin: 0; border-radius: 0; position: relative; text-align: left; float: left; width: auto; height: auto;">
             CONTACTO
         </p>
     </div>
 
     <div class="fila cuatro-columnas">
-
         <div class="columna4">
-            <div class="card" style="width: 15rem;">
-                <p class="card-text" style="text-align: center">CORREO</p>
-                <img src="../IMG/correo.png" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+            <div class="card">
+                <p class="card-titulo">CORREO</p>
+                <img src="../IMG/correo.png" class="card-img" alt="Icono correo">
                 <div class="card-body">
-                    <p class="card-text">Puedes contactarnos al sigueinte correo <br> roberto.hernandezap@alumno.buap.mx</p>
+                    <p class="card-text">
+                        Puedes contactarnos al siguiente correo:<br>
+                        roberto.hernandezap@alumno.buap.mx
+                    </p>
                 </div>
             </div>
         </div>
+
         <div class="columna4">
-            <div class="card" style="width: 15rem;">
-                <p class="card-text" style="text-align: center">Telefono</p>
-                <img src="../IMG/telefono.png" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+            <div class="card">
+                <p class="card-titulo">TELÉFONO</p>
+                <img src="../IMG/telefono.png" class="card-img" alt="Icono teléfono">
                 <div class="card-body">
-                    <p class="card-text">Contactanos a traves de: <br> 764-105-02-34</p>
+                    <p class="card-text">
+                        Contáctanos a través de:<br>
+                        764-105-02-34
+                    </p>
                 </div>
             </div>
         </div>
+
         <div class="columna4">
-            <div class="card" style="width: 15rem;">
-                <p class="card-text" style="text-align: center">HORARIO</p>
-                <img src="../IMG/calendario.jpg" class="card-img-top" alt="..." style="width: 8rem; height: 8rem; object-fit: cover;">
+            <div class="card">
+                <p class="card-titulo">HORARIO</p>
+                <img src="../IMG/calendario.jpg" class="card-img" alt="Icono calendario">
                 <div class="card-body">
-                    <p class="card-text">Contamos con el siguiente horario: <br> Lunes - Viernes: 9 am a 6 pm <br> Fines de semana: 1 pm a 6 pm</p>
+                    <p class="card-text">
+                        Contamos con el siguiente horario:<br>
+                        Lunes - Viernes: 9 am a 6 pm<br>
+                        Fines de semana: 1 pm a 6 pm
+                    </p>
                 </div>
             </div>
-
         </div>
     </div>
-
 
 </div>
 
@@ -163,10 +177,19 @@
         <div class="links">
             <h3>Enlaces útiles</h3>
             <ul>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Términos y condiciones de uso</a></li>
-                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#" data-info="about">Acerca de</a></li>
+                <li><a href="#" data-info="terms">Términos y condiciones de uso</a></li>
+                <li><a href="#" data-info="privacy">Política de privacidad</a></li>
             </ul>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalText"></p>
+            </div>
         </div>
 
         <div class="contact">
@@ -290,5 +313,52 @@
 <!-- Script de partículas -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="../JS/particulas.js"></script>
+<script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+
+    // Contenido para cada link
+    const infoData = {
+        about: {
+            title: "Acerca de",
+            text: "Esta aplicación ayuda a calcular tu huella de carbono y ofrece recomendaciones para reducirla, contribuyendo al cuidado del medio ambiente."
+        },
+        terms: {
+            title: "Términos y condiciones de uso",
+            text: "Al usar esta aplicación aceptas que los datos proporcionados son aproximados y se usan sólo para fines informativos. No nos responsabilizamos por decisiones tomadas basadas en estos resultados."
+        },
+        privacy: {
+            title: "Política de privacidad",
+            text: "No recolectamos ni almacenamos información personal identificable. Todos los datos ingresados se usan exclusivamente para cálculos locales en tu navegador."
+        }
+    };
+
+    // Abrir modal con contenido correspondiente
+    document.querySelectorAll('.links a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const key = link.getAttribute('data-info');
+            if (infoData[key]) {
+                modalTitle.textContent = infoData[key].title;
+                modalText.textContent = infoData[key].text;
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    // Cerrar modal
+    closeModal.onclick = () => {
+        modal.style.display = 'none';
+    };
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = event => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>

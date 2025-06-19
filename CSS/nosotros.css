@@ -96,128 +96,8 @@ body {
     color: inherit;
 }
 
-/* =================== ESTILOS DE SECCIONES =================== */
 
-/* Títulos de sección en encabezados */
-.section-title {
-    background-color: #2E7D32;
-    color: white;
-    padding: 5px 10px;
-    margin: 0;
-    border-radius: 0;
-    position: relative;
-    text-align: left;
-    float: left;
-    width: auto;
-    height: auto;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* Texto en secciones */
-.section-text {
-    color: black;
-    padding: 5px 10px;
-    margin: 0;
-    border-radius: 0;
-    position: relative;
-    text-align: left;
-    float: left;
-    width: auto;
-    height: auto;
-}
-
-/* Lista en pie de página */
-.list-style {
-    color: black;
-    font-size: 11px;
-    margin: 0;
-    padding-left: 20px;
-}
-
-/* Títulos de las secciones de los carruseles o encabezados */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    animation: fadeInDown 1s ease;
-    font-weight: bold;
-}
-
-/* Para los títulos específicos (ej. "Historia y evolución") si quieres usar la misma clase */
-h2 {
-    font-size: clamp(1rem, 2vw, 2rem);
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ffffff; /* por si quieres mantenerlo igual */
-    animation: fadeInDown 1s ease;
-}
-
-/* =================== ESTILOS DE CARRUSEL =================== */
-.carrusel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-.carrusel-contenedor {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* 3 imágenes iguales */
-}
-.carrusel-item {
-    flex: 0 0 100%;
-}
-.carrusel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.carrusel-item {
-    aspect-ratio: 16 / 9; /* Puedes ajustar si quieres */
-}
-
-/* =================== ESTILOS DE FILAS Y COLUMNAS =================== */
-.fila {
-    display: flex;
-    margin: 10px 0;
-}
-
-/* Estilos para diferentes tipos de filas */
-.fila.tres-columnas,
-.fila.dos-columnas,
-.fila.cuatro-columnas,
-.fila.primeracolumna {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* Centrado vertical en primeracolumna */
-.fila.primeracolumna {
-    align-items: center;
-    height: 100%;
-}
-.fila.primeracolumna p {
-    font-size: 1rem;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: black;
-}
-
-/* Texto en filas con columnas */
-.fila.tres-columnas p,
-.fila.dos-columnas p {
-    color: black;
-    font-size: 11px;
-    text-align: justify;
-}
-
-/* Columnas generales */
-.columna,
-.columna2,
-.columna4 {
+.columna{
     display: flex;
     flex: 1;
     background-color: rgba(0, 100, 0, 0);
@@ -226,22 +106,226 @@ h2 {
     border-radius: 5px;
     justify-content: center;
 }
-p{
-    font-size: .75rem;
-    padding: 0 10px;
-    box-sizing: border-box;
+
+p {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.fila {
+    display: flex;
+    margin: 10px 0;
+}
+
+
+
+
+
+/* =================== Contacto =================== */
+
+/* Contenedor general */
+.fila.cuatro-columnas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+/* Cada columna */
+.columna4 {
+    flex: 1 1 250px; /* Se adapta hasta 3 por fila */
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo de la tarjeta */
+.card {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Título de la tarjeta */
+.card-titulo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Imagen */
+.card-img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+}
+
+/* Contenido de la tarjeta */
+.card-body {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0.5rem;
+}
+
+/* =================== Ubicacion =================== */
+/* Contenedor general de la fila */
+.filaubi.ubicacion-columnas {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* Columna única centrada */
+.filaubi.ubicacion-columnas .columnaubi {
+    flex: 1 1 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tarjeta de ubicación */
+.card2-ubicacion {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 1rem;
+}
+
+/* Imagen */
+.ubicacion-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Texto */
+.card2-body .car2-text {
+    font-size: 1rem;
+    color: #444;
     text-align: center;
 }
 
-/* Para las columnas internas en "cuatro-columnas" */
-.fila.cuatro-columnas {
+
+/* =================== PRESENTACION =================== */
+
+.row {
+    padding: 2rem;
+    border-radius: 8px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* ✅ Espacio entre elementos */
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    color: black;
-    font-size: 4px;
 }
+
+
+.task {
+    position: relative;
+    color: #2e2e2f;
+    cursor: move;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    border: 3px dashed transparent;
+    width: 100%;
+    max-width: 350px;
+    margin: 1rem; /* ✅ Espacio entre tarjetas */
+}
+
+.task:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    border-color: rgb(162, 179, 207) !important;
+}
+
+.task p {
+    font-size: 15px;
+    margin: 1.2rem 0;
+}
+
+.tag {
+    border-radius: 100px;
+    padding: 4px 13px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #1389eb;
+}
+
+.tags {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options {
+    background: transparent;
+    border: 0;
+    color: #c4cad3;
+    font-size: 17px;
+}
+
+.options svg {
+    fill: #9fa4aa;
+    width: 20px;
+}
+
+.stats {
+    position: relative;
+    width: 100%;
+    color: #9fa4aa;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stats div {
+    margin-right: 1rem;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stats svg {
+    margin-right: 5px;
+    height: 100%;
+    stroke: #9fa4aa;
+}
+
+.viewer span {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(28, 117, 219);
+    margin-right: -10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    padding: 2px;
+}
+
+.viewer span svg {
+    stroke: #fff;
+}
+
 
 /* =================== ESTILOS DE TARJETAS =================== */
 .card {
@@ -260,7 +344,6 @@ p{
     height: 10rem;
     object-fit: cover;
 }
-
 
 /* =================== Politicas =================== */
 .modal {
@@ -293,6 +376,7 @@ p{
     font-weight: bold;
     cursor: pointer;
 }
+
 
 /* =================== ESTILOS DE ICONOS SOCIALES =================== */
 .social-login-icons {
@@ -392,6 +476,7 @@ p{
 .socialcontainer:hover .social-icon-4 {
     transform: translateY(-70px);
 }
+
 /* =================== PIE DE PÁGINA =================== */
 footer {
     background-color: #1c3d3c;
@@ -512,5 +597,69 @@ footer p {
         max-width: 100%;
         font-size: clamp(0.9rem, 2vw, 1.2rem);
         text-align: center;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .fila.cuatro-columnas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna4 {
+        max-width: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .fila.tres-columnas .columna {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .card-ubicacion {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .task {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .card-img-top,
+    .img-card {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .viewer span {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task p {
+        font-size: 14px;
+    }
+    .tag {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+    .options svg {
+        width: 16px;
+    }
+    .stats div {
+        font-size: 11px;
+    }
+    .viewer span {
+        width: 25px;
+        height: 25px;
     }
 }
